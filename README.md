@@ -99,16 +99,7 @@ Die Kernmechaniken sind vorhanden und manuell getestet. Einige automatisierte Se
 
 Details mit Datum und Zuständigkeit: [PROJECT_STATUS.md](PROJECT_STATUS.md)
 
-## 9. Lernfelder und Grenzen
-
-**Was ich als Nächstes lernen will**
-
-- Testläufe von Anfang an versioniert protokollieren (Build, Datum, Ergebnis)
-- Testmanagement- und Bugtracking-Werkzeuge wie Jira oder TestRail
-- Regressionstests systematisch planen
-- Testsitzungen mit mehreren Spielern koordinieren
-- Linux-Grundlagen und Tests unter Netzwerkbedingungen wie Latenz und Paketverlust
-- Grundlagen automatisierter Tests
+## 9.Grenzen
 
 **Grenzen dieses Portfolios**
 
