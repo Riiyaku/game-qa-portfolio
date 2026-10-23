@@ -6,7 +6,7 @@
 
 ## Gemeinsame Voraussetzungen
 
-- Aktueller Client-Build; Version bzw. Stand wird bei Ausführung notiert
+- Aktueller Client-Build mit lokalem Server oder Offline-Testszene; bei künftigen Läufen wird der Stand (Build bzw. Commit) mitnotiert
 - Testszene mit mindestens zwei Trainingspuppen (A, B) in unterschiedlicher Entfernung
 - Figur mit Nahkampfwaffe, voller Gesundheit, keine offenen Fenster
 - Standardsteuerung: Linksklick = Auswahl, Doppelklick = Angriff, WASD = Bewegung, Esc = Abbrechen

@@ -6,7 +6,7 @@
 
 ## Gemeinsame Voraussetzungen
 
-- Aktueller Client-Build mit lokalem Server oder Offline-Testszene; Stand bei Ausführung notieren
+- Aktueller Client-Build mit lokalem Server oder Offline-Testszene; bei künftigen Läufen wird der Stand (Build bzw. Commit) mitnotiert
 - Ebener Boden, mindestens eine Trainingspuppe
 - Standardsteuerung: WASD, rechte Maustaste halten = Kamera drehen, Mausrad = Zoom, Linksklick auf Boden = Hinlaufen, Leertaste = Springen
 

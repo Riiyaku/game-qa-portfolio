@@ -63,23 +63,23 @@ Meine Vorgabe war, das Auto-Attack-Verhalten aus FlyFF nachzubauen. Ein Doppelkl
 
 Als ausführbarer Testfall: [CB-14](../test-cases/combat-test-cases.md#cb-14--gegner-sammeln-schnelle-zielwechsel).
 
-## Was technisch geändert wurde
+## Wer hat was gemacht
 
-Bemerkt habe ich das Problem schon im frühen Prototyp; die Änderungen vom 28.08.2026 verbesserten das Verhalten. Meine Aufnahme vom 11.09.2026 zeigt aber, dass schnelle Klickfolgen danach noch nicht zuverlässig funktionierten. **53 Minuten nach dieser Aufnahme** wurde die Änderung zur Klickerkennung gespeichert (unten). Ob sie das Problem vollständig behob, ist nicht belegt; der Gesamtablauf CB-14 steht weiterhin auf FAIL.
+| Ich | KI (Claude Code / Codex) |
+|---|---|
+| Gewünschtes Verhalten nach FlyFF-Vorbild festgelegt | Umsetzung im Code |
+| Im Spiel getestet, Ausfälle bei schnellen Klickfolgen bemerkt und aufgenommen | Ursache im Code gesucht und Korrekturen umgesetzt |
+| Bedingung eingegrenzt: schnelle Zielwechsel | – |
+| Nach den Korrekturen erneut getestet; Gesamtablauf als FAIL bewertet | – |
 
-**28.08.2026 – erster Prototyp**
+## Was geändert wurde
 
-- Erneutes Anklicken des aktiven Ziels stoppte Auto-Attack. Danach wird nur noch beim Wechsel auf ein anderes Ziel gestoppt.
-- Ein wartender Skill blieb nach einem neuen Angriff bestehen. Danach verwirft ein neuer Angriff den wartenden Skill.
+Bemerkt habe ich das Problem schon im frühen Prototyp, und die Änderungen vom 28.08.2026 verbesserten das Verhalten. Meine Aufnahme vom 11.09.2026 zeigt aber, dass schnelle Klickfolgen danach noch nicht zuverlässig funktionierten. **53 Minuten nach dieser Aufnahme** wurde eine Änderung der Klickerkennung gespeichert. Ob sie das Problem vollständig behob, ist nicht belegt; der Gesamtablauf CB-14 steht weiterhin auf FAIL.
 
-**11.09.2026, 09:52 Uhr – Klickerkennung und Spielgefühl** (direkt nach meiner Aufnahme)
-
-| Bereich | Vorher | Nachher |
-|---|---|---|
-| Doppelklick-Erkennung | Allgemeine Doppelklick-Erkennung der Engine, unabhängig davon, was angeklickt wurde | Zwei Klicks auf **dieselbe** Einheit innerhalb von 600 ms. Ein Klick auf Boden oder ein anderes Objekt setzt die Folge zurück. |
-| Doppelklick während WASD | Angriff startete immer mit automatischem Heranlaufen | Kampfziel wird auch während WASD gesetzt; Heranlaufen startet nur ohne manuelle Bewegung. |
-| Erneuter Angriff auf dasselbe Ziel | Laufender Schlag wurde zurückgesetzt | Laufender Schlag läuft weiter. |
-| Gedrückt gehaltenes WASD | Angriffsdarstellung wurde in jedem Frame zurückgesetzt | Abbruch nur im ersten Frame der Bewegung; danach pausiert der Angriffszyklus. |
+| Datum | Änderung (umgesetzt durch KI) |
+|---|---|
+| 28.08.2026 | Erneutes Anklicken des aktiven Ziels stoppt den Angriff nicht mehr. Ein neuer Angriff verwirft einen noch wartenden Skill. |
+| 11.09.2026 | Ein Doppelklick zählt nur noch, wenn beide Klicks dieselbe Einheit treffen. Ein Angriffsbefehl wird auch während der Bewegung mit WASD angenommen. Ein erneuter Angriff auf dasselbe Ziel unterbricht den laufenden Schlag nicht mehr. |
 
 ## Ergebnisse späterer Prüfungen
 

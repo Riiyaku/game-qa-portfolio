@@ -1,7 +1,7 @@
 # QA-04 – Darstellung anderer Spieler: Drehung und Laufanimation
 
 > **Dokumenttyp: Historisch rekonstruierte Fallstudie**
-> Beobachtung, Testaufbau und Nachtest sind meine eigene Schilderung. Eigene Bildschirmaufnahmen vom 10.09.2026 zeigen den Zustand vor der Korrektur, den Testaufbau mit zwei Clients und den Zustand danach. Ein schriftliches Testprotokoll existiert nicht. Die Korrektur ist in der Projekthistorie belegt (10.09.2026, 12:52 Uhr).
+> Dass ich diesen Test selbst durchgeführt habe, ist meine Eigenangabe. Gestützt wird sie durch eigene Bildschirmaufnahmen von meinem Rechner vom 10.09.2026: Sie zeigen den Zustand vor der Korrektur, den Testaufbau mit zwei Clients und den Zustand danach. Ein schriftliches Testprotokoll oder einen Eintrag in der Projektdokumentation gibt es nicht. Die Korrektur ist in der Projekthistorie belegt (10.09.2026, 12:52 Uhr).
 
 | Feld | Inhalt |
 |---|---|
@@ -49,9 +49,9 @@ Client 1 zeigt die Figur aus Client 2 mit derselben Blickrichtung, mit Laufanima
 
 ## Korrektur
 
-Die Änderung vom 10.09.2026 ändert, wie andere Spieler dargestellt werden. Laufen bzw. Stehen und die Blickrichtung werden jetzt aus der tatsächlich angezeigten Bewegung der Figur bestimmt. Bei langsamer Bewegung bleibt die letzte Blickrichtung erhalten, ein Sprung löst keine Laufanimation aus. Die Implementierung erfolgte durch KI.
+Die Änderung vom 10.09.2026 (umgesetzt durch KI) leitet Laufanimation und Blickrichtung anderer Spieler aus ihrer sichtbaren Bewegung ab. Ein Sprung löst dabei keine Laufanimation aus.
 
-Am selben Tag wurde auch der Sprung eingecheckt, mit automatisierten Tests (unter anderem: kein zweiter Sprung in der Luft). Laut meiner Erinnerung wurden Sprung, Drehung und Laufanimation anderer Spieler in einem gemeinsamen Durchgang korrigiert und anschließend zusammen geprüft.
+Am selben Tag kam auch der Sprung ins Projekt. Laut meiner Erinnerung wurden Sprung, Drehung und Laufanimation anderer Spieler in einem gemeinsamen Durchgang korrigiert und anschließend zusammen geprüft.
 
 ## Ergebnisse späterer Prüfungen
 
@@ -62,10 +62,14 @@ Am selben Tag wurde auch der Sprung eingecheckt, mit automatisierten Tests (unte
 - Laut meiner Erinnerung habe ich danach mit denselben zwei Clients erneut geprüft und anschließend weitere Abläufe getestet: Angriffsanimationen und gemeinsames Angreifen von Monstern. Version, Datum und Einzelergebnisse sind nicht protokolliert.
 - Im Projekt gibt es außerdem eine automatisierte Prüfung für Angriffsanimationen anderer Spieler (nicht von mir).
 
-## Beteiligung anderer
+## Wer hat was gemacht
 
-- Anfängliche Verbindungsprobleme zum Server hat mein Projektpartner behoben.
-- Die fehlende Laufanimation haben wir nach meiner Erinnerung gemeinsam beheben lassen. Die Prüfung mit zwei Clients habe ich allein durchgeführt.
+| Wer | Beitrag |
+|---|---|
+| Ich | Testaufbau mit zwei Clients, Beobachtung, Aufnahmen vor und nach der Korrektur, Nachtest (laut Eigenangabe allein durchgeführt) |
+| Ich und Projektpartner | Korrektur der fehlenden Laufanimation gemeinsam veranlasst (nach meiner Erinnerung) |
+| Projektpartner | Anfängliche Verbindungsprobleme zum Server behoben |
+| KI (Claude Code / Codex) | Umsetzung der Korrektur |
 
 ## Grenzen der Nachweisbarkeit
 

@@ -1,7 +1,7 @@
 # QA-03 – Targeting: Auswahl, Kampfziel und Zielwechsel
 
 > **Dokumenttyp: Historisch rekonstruierte Fallstudie**
-> Die Mechanik und ihre Änderungen sind in der Projekthistorie belegt (27.08.–12.09.2026). Meine eigenen Targeting-Tests sind eine persönliche Angabe ohne damaliges Protokoll. Der dokumentierte manuelle Test vom 07.09.2026 stammt von meinem Projektpartner, nicht von mir.
+> Die Mechanik und ihre Änderungen sind in der Projekthistorie belegt (27.08.–12.09.2026). Meine damaligen Targeting-Tests sind eine Eigenangabe ohne schriftliches Protokoll; eigene Aufnahmen vom 27. und 30.08.2026 zeigen den jeweiligen Stand. Der dokumentierte manuelle Test vom 07.09.2026 stammt von meinem Projektpartner, nicht von mir.
 
 | Feld | Inhalt |
 |---|---|
@@ -40,6 +40,14 @@ In MMORPGs dieser Art muss man einen Gegner ansehen (Name, Lebenspunkte), ohne i
 ![Grauer Ring für Auswahl, roter Ring für Kampfziel, türkiser Zielmarker](../media/qa-03/auswahl-und-kampfziel-2026-08-30.gif)
 
 *Eigene Aufnahme vom 30.08.2026, nach der Überarbeitung von Bewegung und Targeting. Grauer Ring: nur ausgewählt. Roter Ring: aktives Kampfziel. Türkiser Ring am Boden: Ziel für Klick-zu-Bewegen.*
+
+## Wer hat was gemacht
+
+| Wer | Beitrag |
+|---|---|
+| Ich | Verhalten nach FlyFF-Vorbild beschrieben, im Spiel getestet, Anpassungen veranlasst; heute die Testfälle unten |
+| KI (Claude Code / Codex) | Umsetzung, einschließlich der Trennung von Auswahl und Kampfziel (28.08.) und der Klickerkennung (11.09.) |
+| Projektpartner | Erweiterungen vom 11. und 12.09. (siehe Grenzen); manueller Test vom 07.09.2026 |
 
 ## Rekonstruierte Grenzfälle
 

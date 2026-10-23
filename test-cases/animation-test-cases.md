@@ -6,7 +6,7 @@
 
 ## Gemeinsame Voraussetzungen
 
-- Aktueller Client-Build, Stand bei Ausführung notieren
+- Aktueller Client-Build; bei künftigen Läufen wird der Stand (Build bzw. Commit) mitnotiert
 - Spielfigur mit den drei Grundanimationen Idle, Run und Attack
 - Für AN-06 und AN-07: zwei Clients am selben Server
 

@@ -27,7 +27,7 @@ Am deutlichsten belegt ist dieser Ablauf in [QA-01](../bug-reports/01-visual-qua
 | Jede Ausführung protokolliert (Version, Datum, Ergebnis) | Meine frühen Tests sind nicht protokolliert |
 | Bugreport in einem Tracker mit Status | Fehler wurden im Gespräch mit der KI beschrieben und direkt korrigiert |
 | Definierte Regressionstests nach jeder Änderung | Nachtest des betroffenen Ablaufs, aber ohne feste Testliste |
-| Schweregrad und Priorität nach festen Regeln | Bauchgefühl aus Spielersicht |
+| Schweregrad und Priorität nach festen Regeln | Einschätzung aus Spielersicht, noch ohne feste Skala |
 | Getrennte Rollen: Entwicklung und Test | Ich beschreibe, die KI setzt um, ich prüfe – aber ohne festen Abnahmeprozess für Gameplay |
 
 Dieses Portfolio ist mein erster Schritt, das zu ändern: Die [Testfälle](../test-cases/combat-test-cases.md) sind so formuliert, dass sie mit Version, Datum und Ergebnis ausgeführt werden können.
@@ -64,7 +64,8 @@ So will ich jede Ausführung eines Testfalls künftig festhalten:
 
 ## Was ich daraus gelernt habe
 
-- **Ohne Protokoll kein Nachweis.** Ich weiß, dass ich Auto-Attack oft getestet habe – belegen kann ich es heute nur indirekt.
+- **Ohne Protokoll kein Nachweis.** Meine frühen Tests kann ich heute vor allem über Bildschirmaufnahmen belegen, nicht über Notizen.
+- **Aufnahmen vor und nach einer Korrektur sind der stärkste Beleg.** Siehe [QA-04](../bug-reports/04-remote-player-display.md) und [QA-05](../bug-reports/05-run-animation-root-motion.md).
 - **„Technisch bestanden“ heißt nicht „sieht richtig aus“.** Siehe QA-01.
 - **Den Prüfaufbau mitbeschreiben.** Ein Teil meiner Beanstandung in QA-01 kam von der Testpose, nicht vom Modell.
 - **Grenzfälle sind die interessanten Fälle.** Probleme zeigten sich bei schnellen Eingaben und bei Zustandswechseln (Bewegung ↔ Angriff), nicht beim einfachen Normalfall.

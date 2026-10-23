@@ -15,6 +15,16 @@
 | Persönliche Beteiligung | Sichtprüfung, Beanstandung mit eigenen Bildschirmaufnahmen, Freigabe des Folgeschritts |
 | Aktueller Status | Beanstandung angenommen, Weiterarbeit gestoppt. Behebung nicht abgeschlossen bzw. nicht von mir abgenommen |
 
+## Kurzfassung
+
+| | |
+|---|---|
+| Ziel | Die ersten beiden Zehen des rechten Fußes sollen zur Vorlage passen. |
+| KI-Prüfung | Technisch bestanden, visuell „beibehalten“, Gesamturteil PASS WITH NOTES. |
+| Meine Sichtprüfung | Die Zehen wirken stumpf und zylindrisch, der Übergang zum Fuß ist abrupt, die Füße wirken eingedreht. Ich habe das mit eigenen Bildern beanstandet. |
+| Reaktion | Der KI-Prüfer hat sein positives Urteil zurückgenommen (NO-GO), der Arbeitsauftrag wurde blockiert. |
+| Folge für die Freigabe | Keine Übertragung auf die übrigen Zehen, keine Formabnahme. Die Behebung ist bis heute nicht abgenommen. |
+
 ## 1. Ursprüngliches Qualitätsziel
 
 Gesucht war eine glatte, gesichtslose männliche Grundfigur im Stil der festgelegten Vorlage (Vorder-, Seiten- und Rückansicht). In diesem Arbeitsschritt sollten die beiden ersten Zehen des rechten Fußes an die bereits geprüfte linke Seite angepasst werden.
@@ -33,11 +43,11 @@ Abnahmekriterium im Arbeitsauftrag: *Die zwei rechten Zehen passen in Vorder-, O
 
 ## 2. Prüfung vor meiner Beanstandung
 
-Die KI-Agenten hatten den Kandidaten umfangreich geprüft:
+Die KI-Agenten hatten den Kandidaten bereits geprüft:
 
-- Technisch: Geometrie, Texturkoordinaten und Gewichtung unverändert außerhalb des bearbeiteten Bereichs, 157 Posen ohne gemessene Durchdringung am Fuß, Import in Godot mit 19 bestandenen Prüfungen.
-- Visuell: Ein KI-Prüfer für Charakterdarstellung bewertete Nahaufnahmen mit „begrenztes KEEP“ (Form beibehalten).
-- Gesamturteil der KI-Prüfung: **PASS WITH NOTES**, Status „bereit zum Testen“, menschliche Abnahme offen.
+- **Technisch:** umfangreich bestanden, unter anderem keine Durchdringungen am Fuß in über 150 geprüften Posen.
+- **Visuell:** Ein KI-Prüfer für Charakterdarstellung bewertete Nahaufnahmen mit „begrenztes KEEP“ (Form beibehalten).
+- **Gesamturteil:** **PASS WITH NOTES**, Status „bereit zum Testen“. Die menschliche Abnahme stand noch aus.
 
 ## 3. Reproduktion
 

@@ -32,7 +32,7 @@ Stand: **23.10.2026**. Grundlage sind die Projektdokumentation, die Versionshist
 | Drehung und Laufanimation anderer Spieler | ja | 10.09.2026 | AN-06: PASS ([QA-04](bug-reports/04-remote-player-display.md)) | ja | – | Test unter Netzwerkverzögerung |
 | Angriffe anderer Spieler, gemeinsames Angreifen | ja | – | AN-07: PASS | ja | – | – |
 
-Für Auto-Attack und für das Laufen habe ich nach eigener grober Schätzung jeweils etwa einen Tag mit Testen und Nachbessern verbracht. Beim Laufen habe ich dabei auch die Platzhalterfigur samt Laufanimation einbauen lassen (30.08.2026).
+Für Auto-Attack und für das Laufen habe ich nach eigener grober Schätzung jeweils etwa einen Tag mit Testen und Nachbessern verbracht. Beim Laufen habe ich die Platzhalterfigur und ihre Animationen am 29.08.2026 selbst in Godot eingebunden ([QA-05](bug-reports/05-run-animation-root-motion.md)); im Projektverlauf gespeichert wurde das am 30.08.2026.
 
 „Automatisch: ja“ heißt nur, dass im Projekt automatisierte Tests oder Testläufe für den Bereich existieren – nicht, dass alle aktuell bestehen.
 

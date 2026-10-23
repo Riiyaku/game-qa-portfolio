@@ -1,38 +1,84 @@
 # Game QA & Gameplay Testing Portfolio
 
-Manuelle Gameplay-Tests, Bugreports und QA-Fallstudien aus einem privaten MMORPG-Prototyp.
+Manuelles Gameplay-Testing, Bugreports und QA-Fallstudien aus einem privaten MMORPG-Prototyp.
 
-## Auf einen Blick
+## 1. Über mich und meine Rolle
 
-| Frage | Antwort |
+Ich prüfe Gameplay aus Spielersicht. Ich beschreibe, wie sich eine Mechanik verhalten soll, teste die Umsetzung im Spiel und reproduziere Auffälligkeiten. Fehler dokumentiere ich mit Bildschirmaufnahmen, und nach jeder Korrektur prüfe ich erneut. Diese Arbeit mache ich in einem eigenen MMORPG-Prototyp, den ich zusammen mit einem langjährigen Freund entwickle.
+
+Beruflich arbeite ich im digitalen Marketing. Von dort bringe ich Erfahrung in eigenständiger Projektorganisation mit.
+
+| Auf einen Blick | |
 |---|---|
-| Was ist das Projekt? | Ein privater MMORPG-Prototyp (Godot, C#/.NET, Client-Server-Architektur), den ich mit einem langjährigen Freund als Projektpartner entwickle. |
-| Was habe ich gemacht? | Gameplay-Ideen und gewünschtes Verhalten beschrieben, Funktionen im Spiel manuell geprüft, Auffälligkeiten gemeldet, Korrekturen veranlasst und erneut geprüft, Charaktermodell und Animationen visuell bewertet. |
-| Was hat die KI gemacht? | Den überwiegenden Teil des Programmcodes und der automatisierten Tests haben Claude Code und OpenAI Codex umgesetzt. Ich habe weder den Großteil des Codes noch automatisierte Tests selbst geschrieben. |
-| Was ist belegt? | Zwei Qualitätsbefunde mit direktem Beleg: die Rücknahme einer positiven KI-Bewertung nach meiner Beanstandung ([01](bug-reports/01-visual-quality-review.md)) und ein selbst behobener Animationsfehler ([05](bug-reports/05-run-animation-root-motion.md)). Weitere Fälle sind aus der Projekthistorie rekonstruiert und mit eigenen Bildschirmaufnahmen ergänzt. 30 manuelle Testfälle mit aktuellem Status: 27 PASS, 1 FAIL, 2 BLOCKED. |
-| Wo sind Beispiele? | [Bugreports und Fallstudien](#ausgewählte-qa-fallstudien) und [manuelle Testfälle](#manuelle-testfälle) |
+| Meine Rolle | Gameplay-Anforderungen, manuelles Testing, Fehlerreproduktion, Nachtests, visuelle Qualitätsprüfung |
+| Technische Umsetzung | Programmcode und automatisierte Tests überwiegend durch Claude Code und OpenAI Codex; Server, Netzwerk und Datenhaltung durch meinen Projektpartner |
+| Arbeitsproben | 5 Fallstudien, davon 4 mit eigenen Bildschirmaufnahmen; 30 manuelle Testfälle (27 PASS, 1 FAIL, 2 BLOCKED) |
+| Am besten belegt | [Visuelle Qualitätsprüfung](bug-reports/01-visual-quality-review.md): Meine Beanstandung führte dazu, dass eine positive KI-Bewertung zurückgenommen und die Freigabe gestoppt wurde |
 
-## Kurze Vorstellung
+## 2. Das Projekt
 
-Ich komme aus dem Marketing und orientiere mich in Richtung Softwarequalität und Game QA. Ich bin weder ausgebildeter Softwaretester noch eigenständig arbeitender C#-Entwickler. Dieses Portfolio zeigt, wie ich in einem eigenen Projekt Spielverhalten prüfe, Fehler beschreibe und Korrekturen begleite – nicht, dass ich ein MMORPG programmiert habe.
+Ein kleiner MMORPG-Prototyp nach dem Vorbild von Fly For Fun (FlyFF). Mein Projektpartner und ich haben dieses ältere MMORPG lange zusammen mit Freunden gespielt; wir kennen uns seit der Grundschule. Unser Ziel ist ein Spiel mit ähnlichem Spielgefühl, bei dem einige Dinge besser gelöst sind.
 
-## Über das MMORPG-Projekt
-
-Ein kleiner MMORPG-Prototyp nach dem Vorbild von Fly For Fun (FlyFF). Mein Projektpartner und ich haben dieses ältere MMORPG lange zusammen mit Freunden gespielt. Wir kennen uns seit der Grundschule. Unser Ziel ist ein Spiel mit ähnlichem Spielgefühl, bei dem einige Dinge besser gelöst sind.
-
-Der Server ist autoritativ und verwaltet den gesamten Spielzustand; der Client stellt dar und sendet Eingaben.
-
-Für die Tests in diesem Portfolio relevant:
+Der Server ist autoritativ und verwaltet den gesamten Spielzustand; der Client stellt dar und sendet Eingaben. Für die Tests in diesem Portfolio sind relevant:
 
 - Bewegung mit WASD relativ zur Kamera und Klick-zu-Bewegen
-- Zielauswahl per Klick, Kampfaufnahme per Doppelklick, automatisches Annähern an das Ziel
-- Auto-Attack mit zeitlich getakteten Schlägen
-- Idle-, Lauf- und Angriffsanimationen, auch für andere Spieler
-- Eine eigene Charakterbasis, die sich noch in Arbeit befindet (bisher wird eine Platzhalterfigur verwendet)
+- Zielauswahl per Klick, Kampf per Doppelklick, automatisches Heranlaufen an das Ziel
+- Auto-Attack mit getakteten Schlägen
+- Idle-, Lauf- und Angriffsanimationen, auch bei anderen Spielern
+- Eine eigene Charakterbasis, die gerade entsteht (bisher wird eine Platzhalterfigur verwendet)
 
 Das Projekt ist ein Prototyp, kein veröffentlichtes Spiel. Der Quellcode bleibt privat.
 
-## Technischer Kontext
+## 3. Meine QA-relevanten Tätigkeiten
+
+| Tätigkeit | Beispiel im Portfolio |
+|---|---|
+| Manuelles Gameplay-Testing | Bewegung, Auto-Attack, Targeting und Animationen; [30 Testfälle](#5-manuelle-testfälle) |
+| Fehlererkennung und Reproduktion | Ausfälle bei schnellen Klickfolgen ([QA-02](bug-reports/02-auto-attack-input.md)), zurückspringende Laufanimation ([QA-05](bug-reports/05-run-animation-root-motion.md)) |
+| Überprüfung von Spielmechaniken | Trennung von Auswahl und Kampfziel ([QA-03](bug-reports/03-targeting-behavior.md)) |
+| Mehrspieler-Prüfung | Darstellung anderer Spieler mit zwei Clients auf einem Rechner ([QA-04](bug-reports/04-remote-player-display.md)) |
+| Anforderungsdefinition | Auto-Attack nach FlyFF-Vorbild; Vorgaben und Prüfregeln für die Charakterbasis |
+| Bewertung von Gameplay und Bedienbarkeit | Gegner sammeln für Flächenangriffe muss mit schnellen Klicks funktionieren ([CB-14](test-cases/combat-test-cases.md)) |
+| Kritische Prüfung KI-generierter Ergebnisse | Sichtbarer Formfehler trotz positiver KI-Bewertung ([QA-01](bug-reports/01-visual-quality-review.md)) |
+| Dokumentation und Nachtest | Aufnahmen vor und nach der Korrektur ([QA-04](bug-reports/04-remote-player-display.md), [QA-05](bug-reports/05-run-animation-root-motion.md)) |
+| Zusammenarbeit im Team | Klare Arbeitsteilung mit meinem Projektpartner; Test seines World-Editors ([Testablauf](test-process/manual-testing-workflow.md#auch-werkzeuge-testen)) |
+
+Mein Schwerpunkt ist der Client: Gameplay, Bedienung und Darstellung. Mein Projektpartner verantwortet Server, gemeinsame Spiellogik, Authentifizierung, Netzwerk, Datenhaltung und Infrastruktur. Die im Projekt dokumentierten manuellen Tests vom 07.09.2026 hat er durchgeführt.
+
+## 4. Ausgewählte Praxisbeispiele
+
+Jede Fallstudie nennt am Anfang ihren Typ:
+
+- **Original belegter Qualitätsbefund:** Meine Meldung bzw. mein Fund ist direkt dokumentiert.
+- **Historisch rekonstruierte Fallstudie:** Die Änderung ist belegt; meine damaligen Testschritte sind aus Erinnerung und Aufnahmen rekonstruiert.
+
+| Nr. | Thema | Typ | Kern |
+|---|---|---|---|
+| [QA-02](bug-reports/02-auto-attack-input.md) | Auto-Attack bei schnellen Zielwechseln | Rekonstruiert, mit eigener Aufnahme | Schnelle Klickfolgen wurden nicht zuverlässig umgesetzt. Das hätte das Sammeln von Gegnern für Flächenangriffe verhindert. Der Gesamtablauf ist noch FAIL. |
+| [QA-03](bug-reports/03-targeting-behavior.md) | Targeting: Auswahl und Kampfziel | Rekonstruiert, mit eigenen Aufnahmen | „Ausgewählt“ und „angegriffen“ sind getrennte Zustände, mit Grenzfällen für Zielwechsel und Doppelklick. |
+| [QA-04](bug-reports/04-remote-player-display.md) | Darstellung anderer Spieler | Rekonstruiert, mit eigenen Aufnahmen | Mit zwei Clients geprüft: Animationen anderer Spieler wurden nicht übertragen. Aufnahmen vor und nach der Korrektur. |
+| [QA-01](bug-reports/01-visual-quality-review.md) | Visuelle Qualitätsprüfung der Charakterbasis | **Original belegter Qualitätsbefund** | Sichtbarer Formfehler trotz positiver KI-Bewertung. Die Bewertung wurde zurückgenommen, die Freigabe gestoppt. |
+| [QA-05](bug-reports/05-run-animation-root-motion.md) | Laufanimation: Figur springt zurück | **Original belegter Qualitätsbefund** | Selbst gefunden und selbst behoben; Aufnahmen vorher und 16 Minuten später. |
+
+## 5. Manuelle Testfälle
+
+| Datei | Inhalt |
+|---|---|
+| [Combat](test-cases/combat-test-cases.md) | Zielauswahl, Doppelklick, Auto-Attack, Reichweite, Escape, schnelle Eingaben |
+| [Movement](test-cases/movement-test-cases.md) | WASD, Klick-zu-Bewegen, Unterbrechungen, Sprung |
+| [Animation](test-cases/animation-test-cases.md) | Idle/Run/Attack, Übergänge, Rotation, andere Spieler, Sichtprüfung des Modells |
+
+**Stand 23.10.2026:** 27 von 30 Testfällen **PASS**.
+- **1 FAIL:** CB-14, das schnelle Sammeln von Gegnern funktioniert erst teilweise.
+- **2 BLOCKED:** Der Test unter Netzwerkverzögerung ist noch nicht vorbereitet. Die Sichtprüfung des Charaktermodells wartet, bis die Modellbasis ausgetauscht ist.
+
+## 6. Testprozess
+
+Idee beschreiben → KI setzt um → im Spiel testen → Auffälligkeit eingrenzen und beschreiben → KI korrigiert → erneut testen → bewerten.
+
+Der Ablauf ist in der Praxis entstanden und noch kein vollständiger professioneller QA-Prozess. Was ich bereits anwende und was ich ergänzen will: [Manueller Testablauf](test-process/manual-testing-workflow.md).
+
+## 7. Technologien und KI-Unterstützung
 
 | Bereich | Eingesetzt |
 |---|---|
@@ -43,88 +89,32 @@ Das Projekt ist ein Prototyp, kein veröffentlichtes Spiel. Der Quellcode bleibt
 | KI-Werkzeuge | Claude Code, OpenAI Codex; ChatGPT für Schritt-für-Schritt-Anleitungen |
 | 3D | Blender (durch KI-Agenten bedient) |
 
-## Meine persönliche Rolle
-
-**Arbeitsteilung im Team**
-
-| Ich (Client-Gameplay, Prüfung) | Projektpartner (Technik) |
-|---|---|
-| Gameplay-Ideen und gewünschte Mechaniken | Server und gemeinsame Spiellogik |
-| Anforderungen für KI-Implementierungen formulieren | Authentifizierung, Netzwerk |
-| Manuelle Prüfung im Spiel, Fehler beschreiben | Persistenz, Infrastruktur |
-| Korrekturen veranlassen und erneut prüfen | |
-| Bedienbarkeit, Spielgefühl, visuelle Qualität | |
-| Werkzeuge des Projektpartners testen (z. B. World-Editor) | |
-
-**Was ich laut eigener Angabe getestet habe:** Spielerbewegung, Auto-Attack, Targeting und Animationen, auch die Darstellung anderer Spieler mit zwei gleichzeitig gestarteten Clients. Für diese Tests existieren keine personenbezogenen Testprotokolle aus der damaligen Zeit. Die passenden Änderungen sind in der Projekthistorie nachvollziehbar; die Testabläufe in diesem Portfolio sind daraus rekonstruiert und entsprechend gekennzeichnet.
-
-**Was nicht von mir stammt:** Die im Projekt dokumentierten manuellen Tests vom 07.09.2026 (Kamera, Targeting, Benutzeroberfläche) hat mein Projektpartner durchgeführt.
-
-## Zusammenarbeit mit KI-Tools
-
-Die Implementierung erfolgte überwiegend durch Claude Code und Codex. Meine Aufgabe war, das gewünschte Verhalten so genau zu beschreiben, dass es umgesetzt werden konnte, und danach im Spiel zu prüfen, ob es tatsächlich so funktioniert. Ab Oktober 2026 habe ich außerdem verlangt, dass KI-Prüfer Ergebnisse anhand tatsächlicher Bilder und Abläufe bewerten und Fehler melden, statt sie selbst zu reparieren.
+Den Großteil des Programmcodes und die automatisierten Tests haben Claude Code und Codex geschrieben, nicht ich. Mein Beitrag liegt darin, das gewünschte Verhalten festzulegen, die Ergebnisse im Spiel zu prüfen und zu entscheiden, ob eine Korrektur ausreicht. Seit Oktober 2026 lasse ich KI-Ergebnisse zusätzlich von getrennten KI-Prüfern bewerten, die Fehler melden, aber nicht selbst reparieren. Selbst umgesetzt habe ich zum Beispiel das Einbinden der Animationen in Godot ([QA-05](bug-reports/05-run-animation-root-motion.md)).
 
 Ausführlich: [KI-gestützte Entwicklung](test-process/ai-assisted-development.md)
 
-## Manueller Testprozess
+## 8. Projektstatus
 
-Mein Ablauf: Idee beschreiben → KI setzt um → im Spiel testen → Auffälligkeit eingrenzen und beschreiben → KI korrigiert → erneut testen → bewerten.
+Die Kernmechaniken sind vorhanden und manuell getestet. Einige automatisierte Server- und Klassentests des Projekts waren im Oktober 2026 weiterhin fehlerhaft. Die neue Charakterbasis ist noch nicht abgenommen.
 
-Das ist ein informeller Entwicklungs- und Testprozess, kein vollständiger professioneller QA-Prozess. Was mir dazu noch fehlt, steht ebenfalls dort: [Manueller Testablauf](test-process/manual-testing-workflow.md)
+Details mit Datum und Zuständigkeit: [PROJECT_STATUS.md](PROJECT_STATUS.md)
 
-## Ausgewählte QA-Fallstudien
+## 9. Lernfelder und Grenzen
 
-Jedes Dokument nennt seinen Typ am Anfang:
+**Was ich als Nächstes lernen will**
 
-- **Original belegter Qualitätsbefund** – meine Meldung ist im Projekt dokumentiert.
-- **Historisch rekonstruierte Fallstudie** – die Änderung ist belegt, meine damaligen Testschritte nicht vollständig.
+- Testläufe von Anfang an versioniert protokollieren (Build, Datum, Ergebnis)
+- Testmanagement- und Bugtracking-Werkzeuge wie Jira oder TestRail
+- Regressionstests systematisch planen
+- Testsitzungen mit mehreren Spielern koordinieren
+- Linux-Grundlagen und Tests unter Netzwerkbedingungen wie Latenz und Paketverlust
+- Grundlagen automatisierter Tests
 
-| Nr. | Thema | Typ | Kern |
-|---|---|---|---|
-| [01](bug-reports/01-visual-quality-review.md) | Zehenform und Fußstellung der Charakterbasis | Original belegter Qualitätsbefund | Meine Beanstandung führte zur Rücknahme einer positiven KI-Bewertung und zum Stopp der Weiterarbeit. Mit Bildvergleich Vorlage ↔ Modell. |
-| [02](bug-reports/02-auto-attack-input.md) | Auto-Attack bei schnellen Zielwechseln | Historisch rekonstruierte Fallstudie | Beim schnellen Wechsel zwischen Gegnern kam teilweise keine Reaktion. Das hätte das Sammeln von Gegnern für Flächenangriffe verhindert. |
-| [03](bug-reports/03-targeting-behavior.md) | Targeting: Auswahl und Kampfziel | Historisch rekonstruierte Fallstudie | Trennung von „ausgewählt“ und „angegriffen“, Zielwechsel |
-| [04](bug-reports/04-remote-player-display.md) | Darstellung anderer Spieler | Historisch rekonstruierte Fallstudie | Mit zwei Clients geprüft: Animationen anderer Spieler fehlten. Mit Aufnahmen vor und nach der Korrektur. |
-| [05](bug-reports/05-run-animation-root-motion.md) | Laufanimation: Figur springt zurück | Original belegter Qualitätsbefund | Selbst gefunden und selbst behoben: falsche Variante der Laufanimation. Aufnahmen vorher und 16 Minuten später. |
+**Grenzen dieses Portfolios**
 
-## Manuelle Testfälle
+- Meine frühen Tests aus August und September 2026 sind nicht schriftlich protokolliert. Belegt sind sie über die Projekthistorie, meine Aufnahmen und meine eigene Angabe; die Fallstudien kennzeichnen das jeweils.
+- Mehrspielertests habe ich mit zwei Clients auf einem Rechner durchgeführt, nicht mit mehreren echten Spielern.
 
-| Datei | Inhalt |
-|---|---|
-| [Combat](test-cases/combat-test-cases.md) | Zielauswahl, Doppelklick, Auto-Attack, Reichweite, Escape, schnelle Eingaben |
-| [Movement](test-cases/movement-test-cases.md) | WASD, Klick-zu-Bewegen, Unterbrechung des automatischen Annäherns |
-| [Animation](test-cases/animation-test-cases.md) | Idle/Run/Attack, Übergänge, Rotation, andere Spieler, Sichtprüfung des Modells |
+## Datenschutz
 
-**Stand 23.10.2026:** 27 von 30 Testfällen **PASS**. **1 FAIL:** CB-14, das schnelle Sammeln von Gegnern funktioniert erst teilweise und wird weiter überarbeitet. **2 BLOCKED:** Test unter Netzwerkverzögerung noch nicht möglich; Sichtprüfung des Charaktermodells, weil die Modellbasis gerade ausgetauscht wird.
-
-## Projektstatus
-
-Was im Projekt vorhanden, was geprüft und was offen ist – und von wem und wann geprüft: [PROJECT_STATUS.md](PROJECT_STATUS.md)
-
-Kurz: Die Kernmechaniken sind vorhanden. Einige automatisierte Server- und Klassentests waren im Oktober 2026 weiterhin fehlerhaft. Die neue Charakterbasis wartet auf die menschliche Abnahme.
-
-## Fähigkeiten und Lernfelder
-
-**Praktisch angewendet**
-
-- Spielverhalten aus Spielersicht prüfen und Abweichungen beschreiben
-- Erwartetes Verhalten vorab formulieren (Anforderungen mit Akzeptanzkriterien)
-- Visuelle Fehler erkennen, auch gegen eine bereits positive automatische Bewertung
-- Nach einer Korrektur erneut prüfen
-- Mehrspieler-Darstellung mit zwei lokal gestarteten Clients prüfen
-- Fehler mit Bildschirmaufnahmen vor und nach der Korrektur belegen
-- Animationen in Godot einbinden und einen Animationsfehler selbst eingrenzen und beheben (mit Anleitung von ChatGPT)
-- Mit Git-basiertem Projektablauf und KI-Entwicklungswerkzeugen arbeiten
-
-**Noch nicht nachgewiesen bzw. Lernziele**
-
-- Strukturierte, versionierte Testprotokolle von Anfang an führen
-- Testmanagement- und Bugtracking-Werkzeuge (z. B. Jira, TestRail)
-- Regressionstests planen und dokumentieren
-- Testkoordination mit mehreren Spielern
-- Linux-Grundlagen, Testumgebungen, Netzwerkbedingungen (Latenz, Paketverlust) gezielt testen
-- Eigene automatisierte Tests schreiben
-
-## Datenschutz und privater Quellcode
-
-Das MMORPG-Repository ist privat und wird nicht veröffentlicht. Dieses Portfolio enthält keinen Quellcode, keine Zugangsdaten und keine internen Infrastrukturangaben. Fehlerbeschreibungen und Abläufe sind in eigenen Worten zusammengefasst. Die enthaltenen Bilder stammen aus dem Projekt; ihre Herkunft ist in der [Medienübersicht](media/README.md) angegeben.
+Das MMORPG-Repository ist privat. Dieses Portfolio enthält keinen Quellcode, keine Zugangsdaten und keine internen Infrastrukturangaben. Die Bilder stammen aus dem Projekt; ihre Herkunft steht in der [Medienübersicht](media/README.md).

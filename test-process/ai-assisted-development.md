@@ -42,6 +42,6 @@ Im Projektablauf gilt außerdem: höchstens zwei Korrekturrunden pro Problem, da
 ## Grenzen dieser Arbeitsweise
 
 - Ich kann Code nur eingeschränkt lesen und Ursachen im Code nicht selbst bestätigen. Ich bewerte das **Verhalten**, nicht die Implementierung.
-- Ohne eigenes Protokoll hängt der Nachweis meiner Tests an der Dokumentation, die die KI schreibt.
+- Ohne eigenes Protokoll hängt der Nachweis meiner Tests an der Projektdokumentation, die überwiegend die KI schreibt, und an meinen eigenen Bildschirmaufnahmen.
 - Die KI kann Ergebnisse zu positiv darstellen. Ich habe deshalb gelernt, nach tatsächlichen Bildern und Abläufen zu fragen statt nach Zusammenfassungen.
 - KI-Werkzeuge haben eigene Störungen. Ich habe zum Beispiel gemeldet, dass wiederholt Genehmigungsabfragen auftraten, und vermutet, dass Läufe unsichtbar im Hintergrund stattfanden, in denen ich gar nichts freigeben konnte. Die technische Analyse dazu hat die KI durchgeführt.
