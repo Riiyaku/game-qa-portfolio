@@ -1,7 +1,7 @@
 # QA-02 – Auto-Attack: Reaktion bei schnellen Zielwechseln
 
 > **Dokumenttyp: Historisch rekonstruierte Fallstudie**
-> Das beobachtete Problem und die Spielsituation dahinter sind meine eigene Schilderung aus der Erinnerung. Ein Testprotokoll aus dieser Zeit existiert nicht. Die Änderungen am Verhalten sind in der Projekthistorie belegt (28.08.–11.09.2026). Die Reproduktionsschritte sind aus meiner Schilderung und den Änderungen abgeleitet.
+> Das beobachtete Problem und die Spielsituation dahinter sind meine eigene Schilderung. Eine eigene Bildschirmaufnahme vom 11.09.2026 zeigt das Problem; ein schriftliches Testprotokoll aus dieser Zeit existiert nicht. Die Änderungen am Verhalten sind in der Projekthistorie belegt (28.08.–11.09.2026). Die Reproduktionsschritte sind aus meiner Schilderung und den Änderungen abgeleitet.
 
 | Feld | Inhalt |
 |---|---|
@@ -13,7 +13,7 @@
 | Schweregrad (eigene Einschätzung) | Hoch für das geplante Spielprinzip: Der übliche Ablauf zum Sammeln vieler Gegner wäre nicht spielbar gewesen |
 | Häufigkeit | Nicht gezählt; laut meiner Erinnerung bei schnellen Zielwechseln regelmäßig |
 | Persönliche Beteiligung | Anforderung formuliert, im Spiel getestet, Problem beschrieben, KI-Korrekturen veranlasst, erneut getestet. Aufwand laut meiner groben Schätzung etwa ein Tag. |
-| Aktueller Status | Das Grundproblem war laut meiner Erinnerung kurz nach der ersten Umsetzung behoben. Stand 23.10.2026: Doppelklick, Annäherung und Unterbrechung bestehen (CB-02 bis CB-10: PASS). Der vollständige Ablauf zum Gegnersammeln (CB-14) ist noch **FAIL**: Er funktioniert nur teilweise und wird weiter überarbeitet. |
+| Aktueller Status | Stand 23.10.2026: Doppelklick, Annäherung und Unterbrechung bestehen (CB-02 bis CB-10: PASS). Der vollständige Ablauf zum Gegnersammeln (CB-14) ist noch **FAIL**: Er funktioniert nur teilweise und wird weiter überarbeitet. |
 
 ## Hintergrund: Warum das wichtig ist
 
@@ -35,6 +35,10 @@ Meine Vorgabe war, das Auto-Attack-Verhalten aus FlyFF nachzubauen. Ein Doppelkl
 - **Bodenklick** beendet den Kampf; die Figur läuft zum Punkt.
 - **WASD** bricht das Heranlaufen und die Angriffsdarstellung ab, **das Ziel bleibt erhalten**.
 
+![Auto-Attack im Spiel: roter Ring, Schlaganimation, Schadenszahlen](../media/qa-02/autoattack-2026-08-30.gif)
+
+*Eigene Aufnahme vom 30.08.2026: der Normalfall. Ein Gegner wird angegriffen (roter Ring), Schlag für Schlag sinken die Lebenspunkte, bis er besiegt ist.*
+
 ## Meine Beobachtung
 
 | | |
@@ -42,7 +46,11 @@ Meine Vorgabe war, das Auto-Attack-Verhalten aus FlyFF nachzubauen. Ein Doppelkl
 | Erwartet | Jeder Doppelklick auf einen neuen Gegner wird sofort umgesetzt, auch wenn man schnell von einem Gegner zum nächsten wechselt. |
 | Beobachtet (aus der Erinnerung) | Die Reaktion war ungenau und eher zu langsam. Beim schnellen Klicken von einem Monster zum nächsten kam teilweise **gar keine Reaktion** im Spiel. |
 | Bedingung | Vor allem bei schnellen Zielwechseln, also genau in der Situation zum Sammeln von Gegnern |
-| Zeitpunkt | Gleich bei der ersten Umsetzung von Auto-Attack im frühen Prototyp (Ende August 2026) |
+| Zeitpunkt | Zuerst bei der ersten Umsetzung von Auto-Attack bemerkt (Ende August 2026). Meine Aufnahme vom 11.09.2026, 08:59 Uhr, zeigt das Problem noch. |
+
+![Schnelle Klickfolgen: Doppelklicks werden nicht zuverlässig umgesetzt](../media/qa-02/schnelle-klicks-2026-09-11.gif)
+
+*Eigene Aufnahme vom 11.09.2026, 08:59 Uhr. Bei schnellen Klicks hintereinander startet der Angriff nicht zuverlässig, und das Wegklicken klappt nicht immer. Im Clip wechselt der Ring mehrfach zwischen grau (nur ausgewählt) und rot (Kampfziel).*
 
 ## Reproduktion (rekonstruiert)
 
@@ -57,14 +65,14 @@ Als ausführbarer Testfall: [CB-14](../test-cases/combat-test-cases.md#cb-14--ge
 
 ## Was technisch geändert wurde
 
-Das Problem trat laut meiner Erinnerung im frühen Prototyp auf und war schnell behoben. In diesen Zeitraum fallen die Änderungen vom 28.08.2026. Welche einzelne Änderung mein Symptom behoben hat, ist nicht belegt.
+Bemerkt habe ich das Problem schon im frühen Prototyp; die Änderungen vom 28.08.2026 verbesserten das Verhalten. Meine Aufnahme vom 11.09.2026 zeigt aber, dass schnelle Klickfolgen danach noch nicht zuverlässig funktionierten. **53 Minuten nach dieser Aufnahme** wurde die Änderung zur Klickerkennung gespeichert (unten). Ob sie das Problem vollständig behob, ist nicht belegt; der Gesamtablauf CB-14 steht weiterhin auf FAIL.
 
-**28.08.2026 – erster Prototyp (Zeitraum meiner Beobachtung)**
+**28.08.2026 – erster Prototyp**
 
 - Erneutes Anklicken des aktiven Ziels stoppte Auto-Attack. Danach wird nur noch beim Wechsel auf ein anderes Ziel gestoppt.
 - Ein wartender Skill blieb nach einem neuen Angriff bestehen. Danach verwirft ein neuer Angriff den wartenden Skill.
 
-**11.09.2026 – spätere Verfeinerung von Klick und Spielgefühl** (nicht als Behebung meines ursprünglichen Symptoms belegt)
+**11.09.2026, 09:52 Uhr – Klickerkennung und Spielgefühl** (direkt nach meiner Aufnahme)
 
 | Bereich | Vorher | Nachher |
 |---|---|---|
@@ -82,7 +90,7 @@ Das Problem trat laut meiner Erinnerung im frühen Prototyp auf und war schnell 
 ## Grenzen der Nachweisbarkeit
 
 - Beobachtung und Nachtest beruhen auf meiner Erinnerung, nicht auf einem Protokoll.
-- Den Zeitpunkt (früher Prototyp, Ende August) kenne ich aus der Erinnerung; ein Datum der Beobachtung ist nicht protokolliert.
+- Für Ende August gibt es keine Aufnahme des Problems; belegt ist es durch meine Aufnahme vom 11.09.2026.
 - Die Implementierung erfolgte durch KI.
 - Ein automatisierter Server-Test zum Angriffsrhythmus (zwei Schadenspakete statt eines bzw. ein zu früher Angriff) war bei Prüfungen am 12. und 13.10.2026 weiterhin fehlerhaft. Er betrifft die Serverseite, nicht die Klickerkennung, zeigt aber: Eine vollständig fehlerfreie Angriffstaktung ist **nicht** belegt.
 

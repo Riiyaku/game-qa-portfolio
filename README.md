@@ -9,7 +9,7 @@ Manuelle Gameplay-Tests, Bugreports und QA-Fallstudien aus einem privaten MMORPG
 | Was ist das Projekt? | Ein privater MMORPG-Prototyp (Godot, C#/.NET, Client-Server-Architektur), den ich mit einem langjährigen Freund als Projektpartner entwickle. |
 | Was habe ich gemacht? | Gameplay-Ideen und gewünschtes Verhalten beschrieben, Funktionen im Spiel manuell geprüft, Auffälligkeiten gemeldet, Korrekturen veranlasst und erneut geprüft, Charaktermodell und Animationen visuell bewertet. |
 | Was hat die KI gemacht? | Den überwiegenden Teil des Programmcodes und der automatisierten Tests haben Claude Code und OpenAI Codex umgesetzt. Ich habe weder den Großteil des Codes noch automatisierte Tests selbst geschrieben. |
-| Was ist belegt? | Ein visueller Qualitätsbefund mit dokumentierter Rücknahme einer positiven KI-Bewertung (siehe [Fallstudie 01](bug-reports/01-visual-quality-review.md)). Weitere Fälle sind aus der Projekthistorie rekonstruiert und als solche gekennzeichnet. 30 manuelle Testfälle mit aktuellem Status: 27 PASS, 1 FAIL, 2 BLOCKED. |
+| Was ist belegt? | Zwei Qualitätsbefunde mit direktem Beleg: die Rücknahme einer positiven KI-Bewertung nach meiner Beanstandung ([01](bug-reports/01-visual-quality-review.md)) und ein selbst behobener Animationsfehler ([05](bug-reports/05-run-animation-root-motion.md)). Weitere Fälle sind aus der Projekthistorie rekonstruiert und mit eigenen Bildschirmaufnahmen ergänzt. 30 manuelle Testfälle mit aktuellem Status: 27 PASS, 1 FAIL, 2 BLOCKED. |
 | Wo sind Beispiele? | [Bugreports und Fallstudien](#ausgewählte-qa-fallstudien) und [manuelle Testfälle](#manuelle-testfälle) |
 
 ## Kurze Vorstellung
@@ -40,7 +40,7 @@ Das Projekt ist ein Prototyp, kein veröffentlichtes Spiel. Der Quellcode bleibt
 | Server und gemeinsame Spiellogik | .NET 8 |
 | Architektur | Autoritativer Server, Client mit Bewegungsvorhersage |
 | Versionsverwaltung | Git, Pull Requests |
-| KI-Werkzeuge | Claude Code, OpenAI Codex |
+| KI-Werkzeuge | Claude Code, OpenAI Codex; ChatGPT für Schritt-für-Schritt-Anleitungen |
 | 3D | Blender (durch KI-Agenten bedient) |
 
 ## Meine persönliche Rolle
@@ -54,6 +54,7 @@ Das Projekt ist ein Prototyp, kein veröffentlichtes Spiel. Der Quellcode bleibt
 | Manuelle Prüfung im Spiel, Fehler beschreiben | Persistenz, Infrastruktur |
 | Korrekturen veranlassen und erneut prüfen | |
 | Bedienbarkeit, Spielgefühl, visuelle Qualität | |
+| Werkzeuge des Projektpartners testen (z. B. World-Editor) | |
 
 **Was ich laut eigener Angabe getestet habe:** Spielerbewegung, Auto-Attack, Targeting und Animationen, auch die Darstellung anderer Spieler mit zwei gleichzeitig gestarteten Clients. Für diese Tests existieren keine personenbezogenen Testprotokolle aus der damaligen Zeit. Die passenden Änderungen sind in der Projekthistorie nachvollziehbar; die Testabläufe in diesem Portfolio sind daraus rekonstruiert und entsprechend gekennzeichnet.
 
@@ -83,7 +84,8 @@ Jedes Dokument nennt seinen Typ am Anfang:
 | [01](bug-reports/01-visual-quality-review.md) | Zehenform und Fußstellung der Charakterbasis | Original belegter Qualitätsbefund | Meine Beanstandung führte zur Rücknahme einer positiven KI-Bewertung und zum Stopp der Weiterarbeit. Mit Bildvergleich Vorlage ↔ Modell. |
 | [02](bug-reports/02-auto-attack-input.md) | Auto-Attack bei schnellen Zielwechseln | Historisch rekonstruierte Fallstudie | Beim schnellen Wechsel zwischen Gegnern kam teilweise keine Reaktion. Das hätte das Sammeln von Gegnern für Flächenangriffe verhindert. |
 | [03](bug-reports/03-targeting-behavior.md) | Targeting: Auswahl und Kampfziel | Historisch rekonstruierte Fallstudie | Trennung von „ausgewählt“ und „angegriffen“, Zielwechsel |
-| [04](bug-reports/04-remote-player-display.md) | Darstellung anderer Spieler | Historisch rekonstruierte Fallstudie | Mit zwei Clients geprüft: Drehung und Laufanimation anderer Spieler fehlten |
+| [04](bug-reports/04-remote-player-display.md) | Darstellung anderer Spieler | Historisch rekonstruierte Fallstudie | Mit zwei Clients geprüft: Animationen anderer Spieler fehlten. Mit Aufnahmen vor und nach der Korrektur. |
+| [05](bug-reports/05-run-animation-root-motion.md) | Laufanimation: Figur springt zurück | Original belegter Qualitätsbefund | Selbst gefunden und selbst behoben: falsche Variante der Laufanimation. Aufnahmen vorher und 16 Minuten später. |
 
 ## Manuelle Testfälle
 
@@ -110,6 +112,8 @@ Kurz: Die Kernmechaniken sind vorhanden. Einige automatisierte Server- und Klass
 - Visuelle Fehler erkennen, auch gegen eine bereits positive automatische Bewertung
 - Nach einer Korrektur erneut prüfen
 - Mehrspieler-Darstellung mit zwei lokal gestarteten Clients prüfen
+- Fehler mit Bildschirmaufnahmen vor und nach der Korrektur belegen
+- Animationen in Godot einbinden und einen Animationsfehler selbst eingrenzen und beheben (mit Anleitung von ChatGPT)
 - Mit Git-basiertem Projektablauf und KI-Entwicklungswerkzeugen arbeiten
 
 **Noch nicht nachgewiesen bzw. Lernziele**

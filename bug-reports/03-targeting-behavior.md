@@ -18,6 +18,10 @@
 
 In MMORPGs dieser Art muss man einen Gegner ansehen (Name, Lebenspunkte), ohne ihn anzugreifen, und während eines Kampfes einen anderen Gegner auswählen können, ohne den Kampf abzubrechen. Im ersten Prototyp gab es dafür nur ein gemeinsames Ziel.
 
+![Erster Prototyp: Kapseln, Ziel anklicken, Konsole meldet Auswahl und Schaden](../media/qa-03/erster-prototyp-2026-08-27.gif)
+
+*Eigene Aufnahme vom 27.08.2026, erster Tag des Prototyps: Ein Gegner wird angeklickt und angegriffen. Die Konsole unten zeigt „Current target“, „Target cleared“ und den Schaden.*
+
 **Änderung (28.08.2026):** Getrennte Zustände für *ausgewähltes Ziel* und *Angriffsziel*.
 
 ## Gewünschtes Verhalten laut Anforderungen
@@ -32,6 +36,10 @@ In MMORPGs dieser Art muss man einen Gegner ansehen (Name, Lebenspunkte), ohne i
 | Escape | Kampf, Bewegung und Skill-Absicht werden abgebrochen, danach die Auswahl gelöscht |
 | Tod/Verschwinden des Ziels | Beide Markierungen verschwinden |
 | Klick auf anderen Spieler (ab 12.09.2026) | Auswahl wie bei einem Gegner, aber **niemals** Angriff |
+
+![Grauer Ring für Auswahl, roter Ring für Kampfziel, türkiser Zielmarker](../media/qa-03/auswahl-und-kampfziel-2026-08-30.gif)
+
+*Eigene Aufnahme vom 30.08.2026, nach der Überarbeitung von Bewegung und Targeting. Grauer Ring: nur ausgewählt. Roter Ring: aktives Kampfziel. Türkiser Ring am Boden: Ziel für Klick-zu-Bewegen.*
 
 ## Rekonstruierte Grenzfälle
 

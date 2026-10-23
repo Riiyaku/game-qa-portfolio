@@ -32,6 +32,20 @@ Am deutlichsten belegt ist dieser Ablauf in [QA-01](../bug-reports/01-visual-qua
 
 Dieses Portfolio ist mein erster Schritt, das zu ändern: Die [Testfälle](../test-cases/combat-test-cases.md) sind so formuliert, dass sie mit Version, Datum und Ergebnis ausgeführt werden können.
 
+## Auch Werkzeuge testen
+
+Nicht nur das Spiel selbst wird getestet. Mein Projektpartner hat einen World-Editor gebaut, mit dem Gelände, Bewuchs und Spielobjekte einer Zone bearbeitet werden. Nachdem er ihn eingebaut hatte, habe ich ihn am 02.09.2026 ausprobiert. Ich wollte herausfinden, was fehlt und was noch nicht gut funktioniert, damit er gezielt weiterarbeiten konnte. Dazu gehörte auch, die bearbeitete Zone direkt aus dem Editor heraus zu Fuß zu erkunden.
+
+![World-Editor mit Gelände- und Bewuchswerkzeugen](../media/werkzeugtest/world-editor-2026-09-02.png)
+
+*Eigene Aufnahme vom 02.09.2026: der World-Editor beim Bemalen des Geländes.*
+
+![Mit der Spielfigur durch die bearbeitete Zone laufen](../media/werkzeugtest/offline-walk-2026-09-02.gif)
+
+*Eigene Aufnahme vom 02.09.2026: mit der Spielfigur durch die bearbeitete Zone laufen.*
+
+Meine einzelnen Rückmeldungen aus diesem Test sind nicht schriftlich festgehalten.
+
 ## Vorlage für künftige Testausführungen
 
 So will ich jede Ausführung eines Testfalls künftig festhalten:

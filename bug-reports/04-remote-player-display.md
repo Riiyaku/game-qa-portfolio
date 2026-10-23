@@ -1,12 +1,12 @@
 # QA-04 – Darstellung anderer Spieler: Drehung und Laufanimation
 
 > **Dokumenttyp: Historisch rekonstruierte Fallstudie**
-> Beobachtung, Testaufbau und Nachtest sind meine eigene Schilderung aus der Erinnerung. Ein Testprotokoll existiert nicht. Die Korrektur ist in der Projekthistorie belegt (10.09.2026).
+> Beobachtung, Testaufbau und Nachtest sind meine eigene Schilderung. Eigene Bildschirmaufnahmen vom 10.09.2026 zeigen den Zustand vor der Korrektur, den Testaufbau mit zwei Clients und den Zustand danach. Ein schriftliches Testprotokoll existiert nicht. Die Korrektur ist in der Projekthistorie belegt (10.09.2026, 12:52 Uhr).
 
 | Feld | Inhalt |
 |---|---|
 | Case-ID | QA-04 |
-| Zeitraum | bis 10.09.2026 (genaue Testtage nicht protokolliert) |
+| Zeitraum | 10.09.2026; Aufnahmen um 01:50, 12:28 und 12:50 Uhr |
 | Betroffene Funktion | Darstellung anderer Spieler im Mehrspielerbetrieb: Blickrichtung, Lauf- und Idle-Animation, später Angriffe; außerdem der Sprung |
 | Technische Voraussetzungen | Lokaler Server, zwei Clients auf demselben Rechner, zwei Spielfiguren |
 | Getestete Version | Nicht protokolliert |
@@ -18,6 +18,10 @@
 ## Testaufbau
 
 Ich habe den Server lokal gestartet und den Client zweimal gestartet. So war ich mit zwei Figuren gleichzeitig im Spiel und konnte im einen Fenster beobachten, was die Figur im anderen Fenster tut. Für diese Prüfung brauchte ich keinen zweiten Tester.
+
+![Zwei Clients nebeneinander: jedes Fenster zeigt beide Figuren](../media/qa-04/testaufbau-zwei-clients-2026-09-10.gif)
+
+*Eigene Aufnahme vom 10.09.2026, 12:28 Uhr, auf die beiden Spielfenster zugeschnitten. Links Client 1, rechts Client 2; in jedem Fenster ist die Figur des anderen Clients zu sehen.*
 
 ## Reproduktion
 
@@ -31,13 +35,17 @@ Ich habe den Server lokal gestartet und den Client zweimal gestartet. So war ich
 
 Client 1 zeigt die Figur aus Client 2 mit derselben Blickrichtung, mit Laufanimation während der Bewegung und Idle im Stand.
 
-## Beobachtetes Ergebnis (aus der Erinnerung)
+## Beobachtetes Ergebnis
 
-| Nr. | Beobachtung |
-|---|---|
-| 1 | Drehte ein Spieler seine Figur, sah der andere Spieler die Drehung **nicht**. |
-| 2 | Andere Spieler bewegten sich **ohne Laufanimation**. |
-| 3 | Der **Sprung** war im Code bereits eingebaut, funktionierte im Spiel aber zunächst nicht. |
+| Nr. | Beobachtung | Beleg |
+|---|---|---|
+| 1 | Drehte ein Spieler seine Figur, sah der andere Spieler die Drehung **nicht**. | Erinnerung |
+| 2 | Die Animationen anderer Spieler wurden **nicht übertragen**: Sie bewegten sich ohne Laufanimation. | Aufnahme 01:50 Uhr |
+| 3 | Der **Sprung** war im Code bereits eingebaut, funktionierte im Spiel aber zunächst nicht. | Erinnerung |
+
+![Vor der Korrektur: Animationen des anderen Spielers werden nicht übertragen](../media/qa-04/vorher-2026-09-10.gif)
+
+*Eigene Aufnahme vom 10.09.2026, 01:50 Uhr, rund elf Stunden vor der Korrektur. Die eigene Figur ist animiert; der andere Spieler wird ohne seine Animationen dargestellt.*
 
 ## Korrektur
 
@@ -46,6 +54,10 @@ Die Änderung vom 10.09.2026 ändert, wie andere Spieler dargestellt werden. Lau
 Am selben Tag wurde auch der Sprung eingecheckt, mit automatisierten Tests (unter anderem: kein zweiter Sprung in der Luft). Laut meiner Erinnerung wurden Sprung, Drehung und Laufanimation anderer Spieler in einem gemeinsamen Durchgang korrigiert und anschließend zusammen geprüft.
 
 ## Ergebnisse späterer Prüfungen
+
+![Nach der Korrektur: beide Figuren laufen mit Animation](../media/qa-04/nachher-2026-09-10.gif)
+
+*Eigene Aufnahme vom 10.09.2026, 12:50 Uhr, zwei Minuten bevor die Korrektur im Projekt gespeichert wurde. Beide Figuren laufen nebeneinander mit Laufanimation.*
 
 - Laut meiner Erinnerung habe ich danach mit denselben zwei Clients erneut geprüft und anschließend weitere Abläufe getestet: Angriffsanimationen und gemeinsames Angreifen von Monstern. Version, Datum und Einzelergebnisse sind nicht protokolliert.
 - Im Projekt gibt es außerdem eine automatisierte Prüfung für Angriffsanimationen anderer Spieler (nicht von mir).
@@ -57,7 +69,7 @@ Am selben Tag wurde auch der Sprung eingecheckt, mit automatisierten Tests (unte
 
 ## Grenzen der Nachweisbarkeit
 
-- Beobachtung, Ablauf und Nachtest beruhen auf meiner Erinnerung.
+- Die fehlenden Animationen, der Testaufbau und der Zustand nach der Korrektur sind mit Aufnahmen belegt. Die fehlende Drehung und das Sprungproblem beruhen auf meiner Erinnerung.
 - Ob Drehung und Laufanimation nacheinander oder gemeinsam korrigiert wurden, lässt sich nicht trennen; belegt ist eine gemeinsame Änderung vom 10.09.2026.
 - Verhalten unter Netzwerkverzögerung oder Paketverlust ist nicht geprüft. Das ist auch in den Projektanforderungen noch offen.
 

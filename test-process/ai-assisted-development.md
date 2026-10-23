@@ -8,6 +8,7 @@ Der Prototyp wird überwiegend mit KI-Werkzeugen entwickelt. Dieses Dokument erk
 |---|---|
 | Claude Code | Implementierung, später auch Koordination von Spezialagenten (Umsetzung und getrennte Prüfung) |
 | OpenAI Codex | Implementierung und Korrekturen, unter anderem an automatisierten Tests; zeitweise Charaktermodell-Arbeit |
+| ChatGPT | Erklärungen und Schritt-für-Schritt-Anleitungen, die ich selbst ausgeführt habe, z. B. das Einbinden von Animationen in Godot ([QA-05](../bug-reports/05-run-animation-root-motion.md)) |
 
 Seit dem 18.10.2026 arbeitet das Projekt ausschließlich mit Claude Code.
 
