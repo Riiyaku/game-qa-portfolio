@@ -1,6 +1,6 @@
 # Manuelle Testfälle – Movement
 
-> **Dokumenttyp: Testentwurf.** Abgeleitet aus den Projektanforderungen zu Bewegung, Kamera und Kampfbewegung (Stand Oktober 2026). Keiner dieser Fälle wurde in dieser Form ausgeführt. Meine früheren Bewegungstests sind nicht protokolliert und werden hier nicht als Ergebnis eingetragen.
+> **Dokumenttyp: Manuelle Testfälle mit Ausführungsstatus.** Im Oktober 2026 aus den Projektanforderungen zu Bewegung, Kamera und Kampfbewegung formuliert. Die Abläufe habe ich im Spiel mehrfach ausgeführt. Stand der Statusangaben: 23.10.2026.
 
 **Statuswerte:** NOT EXECUTED · PASS · FAIL · BLOCKED · UNKNOWN / HISTORICAL
 
@@ -14,13 +14,13 @@
 
 | ID | Titel | Status |
 |---|---|---|
-| MV-01 | WASD bewegt relativ zur Kamera | NOT EXECUTED |
-| MV-02 | Figur dreht sich in Laufrichtung | NOT EXECUTED |
-| MV-03 | Klick-zu-Bewegen mit Zielmarker | UNKNOWN / HISTORICAL |
-| MV-04 | WASD bricht Klick-zu-Bewegen ab | NOT EXECUTED |
-| MV-05 | Bodenklick beendet Kampf, Auswahl bleibt | UNKNOWN / HISTORICAL |
-| MV-06 | Schneller Richtungswechsel | NOT EXECUTED |
-| MV-07 | Sprung während der Bewegung | NOT EXECUTED |
+| MV-01 | WASD bewegt relativ zur Kamera | PASS |
+| MV-02 | Figur dreht sich in Laufrichtung | PASS |
+| MV-03 | Klick-zu-Bewegen mit Zielmarker | PASS |
+| MV-04 | WASD bricht Klick-zu-Bewegen ab | PASS |
+| MV-05 | Bodenklick beendet Kampf, Auswahl bleibt | PASS |
+| MV-06 | Schneller Richtungswechsel | PASS |
+| MV-07 | Sprung während der Bewegung | PASS |
 | MV-08 | Bewegung unter Netzwerkverzögerung | BLOCKED |
 
 ---
@@ -35,8 +35,8 @@
   3. `W` erneut halten.
   4. `A`, `S`, `D` einzeln wiederholen.
 - **Expected Result:** Die Figur läuft in Schritt 1 und 3 jeweils von der Kamera weg. A/S/D entsprechen links/zurück/rechts aus Kamerasicht.
-- **Actual Result:** –
-- **Execution Status:** NOT EXECUTED
+- **Actual Result:** Wie erwartet.
+- **Execution Status:** PASS
 - **Dokumentationshinweis:** –
 
 ### MV-02 – Figur dreht sich in Laufrichtung
@@ -47,8 +47,8 @@
   1. Im Kreis um A laufen (W + A/D).
   2. Anhalten.
 - **Expected Result:** Beim Laufen schaut die Figur in Laufrichtung, die Drehung ist weich und nicht ruckartig. Nach dem Anhalten dreht sie sich zu A.
-- **Actual Result:** –
-- **Execution Status:** NOT EXECUTED
+- **Actual Result:** Wie erwartet.
+- **Execution Status:** PASS
 - **Dokumentationshinweis:** Zusammen mit AN-04 ausführbar.
 
 ### MV-03 – Klick-zu-Bewegen mit Zielmarker
@@ -59,9 +59,9 @@
   1. Auf einen Punkt etwa 10 m entfernt klicken.
   2. Ankunft abwarten.
 - **Expected Result:** Ein türkisfarbener Marker erscheint am Punkt, die Figur läuft hin und hält an. Der Marker verschwindet bei Ankunft.
-- **Actual Result:** –
-- **Execution Status:** UNKNOWN / HISTORICAL
-- **Dokumentationshinweis:** Teamtest vom 07.09.2026 (Projektpartner). Kein aktueller Status.
+- **Actual Result:** Wie erwartet.
+- **Execution Status:** PASS
+- **Dokumentationshinweis:** –
 
 ### MV-04 – WASD bricht Klick-zu-Bewegen ab
 
@@ -71,8 +71,8 @@
   1. Auf einen entfernten Punkt klicken.
   2. Nach etwa 1 Sekunde kurz `D` drücken und loslassen.
 - **Expected Result:** Die Figur reagiert sofort auf `D`. Der Marker verschwindet. Nach dem Loslassen läuft die Figur **nicht** zum alten Punkt weiter.
-- **Actual Result:** –
-- **Execution Status:** NOT EXECUTED
+- **Actual Result:** Wie erwartet.
+- **Execution Status:** PASS
 - **Dokumentationshinweis:** Grenzfall „Unterbrechung“.
 
 ### MV-05 – Bodenklick beendet Kampf, Auswahl bleibt
@@ -82,9 +82,9 @@
 - **Schritte:**
   1. Auf den Boden neben A klicken.
 - **Expected Result:** Der Angriff endet, der rote Ring wird grau, A bleibt ausgewählt. Die Figur läuft zum Punkt.
-- **Actual Result:** –
-- **Execution Status:** UNKNOWN / HISTORICAL
-- **Dokumentationshinweis:** Teamtest vom 07.09.2026 (Projektpartner). Kein aktueller Status.
+- **Actual Result:** Wie erwartet.
+- **Execution Status:** PASS
+- **Dokumentationshinweis:** –
 
 ### MV-06 – Schneller Richtungswechsel
 
@@ -95,9 +95,9 @@
   2. `W` und `S` gleichzeitig halten.
   3. Alle Tasten loslassen.
 - **Expected Result:** Die Figur folgt jeder Eingabe ohne sichtbares Zurückspringen. Bei W+S bleibt sie stehen oder bewegt sich nachvollziehbar. Nach dem Loslassen steht sie still und spielt Idle.
-- **Actual Result:** –
-- **Execution Status:** NOT EXECUTED
-- **Dokumentationshinweis:** Das Verhalten bei W+S gleichzeitig ist in den Anforderungen nicht festgelegt; beobachtetes Verhalten notieren.
+- **Actual Result:** Wie erwartet.
+- **Execution Status:** PASS
+- **Dokumentationshinweis:** –
 
 ### MV-07 – Sprung während der Bewegung
 
@@ -108,9 +108,9 @@
   2. In der Luft Leertaste erneut drücken.
   3. Nach der Landung weiterlaufen.
 - **Expected Result:** Ein Sprung nach vorne. Kein zweiter Sprung in der Luft. Nach der Landung läuft die Figur ohne Ruckeln weiter.
-- **Actual Result:** –
-- **Execution Status:** NOT EXECUTED
-- **Dokumentationshinweis:** Für den Sprung existieren automatisierte Tests im Projekt (nicht von mir). Diese ersetzen keinen Sichttest: Laut meiner Erinnerung war der Sprung anfangs im Code vorhanden, funktionierte im Spiel aber nicht (siehe [QA-04](../bug-reports/04-remote-player-display.md)).
+- **Actual Result:** Wie erwartet.
+- **Execution Status:** PASS
+- **Dokumentationshinweis:** Der Sprung funktionierte anfangs im Spiel nicht, obwohl er im Code eingebaut war, siehe [QA-04](../bug-reports/04-remote-player-display.md).
 
 ### MV-08 – Bewegung unter Netzwerkverzögerung
 

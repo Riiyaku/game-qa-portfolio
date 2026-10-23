@@ -13,7 +13,7 @@
 | Schweregrad (eigene Einschätzung) | Hoch für das geplante Spielprinzip: Der übliche Ablauf zum Sammeln vieler Gegner wäre nicht spielbar gewesen |
 | Häufigkeit | Nicht gezählt; laut meiner Erinnerung bei schnellen Zielwechseln regelmäßig |
 | Persönliche Beteiligung | Anforderung formuliert, im Spiel getestet, Problem beschrieben, KI-Korrekturen veranlasst, erneut getestet. Aufwand laut meiner groben Schätzung etwa ein Tag. |
-| Aktueller Status | Laut meiner Erinnerung kurz nach der ersten Umsetzung behoben. Kein protokollierter Nachtest. Ein automatisierter Server-Kampftest war im Oktober 2026 weiterhin fehlerhaft (siehe Grenzen). |
+| Aktueller Status | Das Grundproblem war laut meiner Erinnerung kurz nach der ersten Umsetzung behoben. Stand 23.10.2026: Doppelklick, Annäherung und Unterbrechung bestehen (CB-02 bis CB-10: PASS). Der vollständige Ablauf zum Gegnersammeln (CB-14) ist noch **FAIL**: Er funktioniert nur teilweise und wird weiter überarbeitet. |
 
 ## Hintergrund: Warum das wichtig ist
 
@@ -77,6 +77,7 @@ Das Problem trat laut meiner Erinnerung im frühen Prototyp auf und war schnell 
 
 - Laut meiner Erinnerung habe ich nach den Korrekturen erneut getestet, bis das Verhalten vernünftig lief. Version, Datum und Einzelergebnisse sind nicht protokolliert.
 - Der Teamtest vom 07.09.2026 (Projektpartner) liegt **vor** der Änderung vom 11.09. und sagt über deren Ergebnis nichts aus.
+- Stand 23.10.2026, meine Testfälle: CB-02 bis CB-10 PASS, CB-14 FAIL (siehe [Combat-Testfälle](../test-cases/combat-test-cases.md)).
 
 ## Grenzen der Nachweisbarkeit
 
@@ -87,4 +88,4 @@ Das Problem trat laut meiner Erinnerung im frühen Prototyp auf und war schnell 
 
 ## Nächster sinnvoller Schritt
 
-CB-14 und CB-03 bis CB-10 im aktuellen Stand ausführen und mit Version, Datum und Ergebnis protokollieren. Für CB-14 lohnt sich eine kurze Bildschirmaufnahme, weil sich Verzögerungen im Video besser zeigen lassen als im Text.
+Das Fehlerbild von CB-14 genauer eingrenzen (bei welchem Schritt, wie oft) und als eigenen Bugreport erfassen. Dafür lohnt sich eine kurze Bildschirmaufnahme, weil sich Verzögerungen im Video besser zeigen lassen als im Text.

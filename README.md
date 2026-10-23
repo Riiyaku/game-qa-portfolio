@@ -9,7 +9,7 @@ Manuelle Gameplay-Tests, Bugreports und QA-Fallstudien aus einem privaten MMORPG
 | Was ist das Projekt? | Ein privater MMORPG-Prototyp (Godot, C#/.NET, Client-Server-Architektur), den ich mit einem langjährigen Freund als Projektpartner entwickle. |
 | Was habe ich gemacht? | Gameplay-Ideen und gewünschtes Verhalten beschrieben, Funktionen im Spiel manuell geprüft, Auffälligkeiten gemeldet, Korrekturen veranlasst und erneut geprüft, Charaktermodell und Animationen visuell bewertet. |
 | Was hat die KI gemacht? | Den überwiegenden Teil des Programmcodes und der automatisierten Tests haben Claude Code und OpenAI Codex umgesetzt. Ich habe weder den Großteil des Codes noch automatisierte Tests selbst geschrieben. |
-| Was ist belegt? | Ein visueller Qualitätsbefund mit dokumentierter Rücknahme einer positiven KI-Bewertung (siehe [Fallstudie 01](bug-reports/01-visual-quality-review.md)). Weitere Fälle sind aus der Projekthistorie rekonstruiert und als solche gekennzeichnet. |
+| Was ist belegt? | Ein visueller Qualitätsbefund mit dokumentierter Rücknahme einer positiven KI-Bewertung (siehe [Fallstudie 01](bug-reports/01-visual-quality-review.md)). Weitere Fälle sind aus der Projekthistorie rekonstruiert und als solche gekennzeichnet. 30 manuelle Testfälle mit aktuellem Status: 27 PASS, 1 FAIL, 2 BLOCKED. |
 | Wo sind Beispiele? | [Bugreports und Fallstudien](#ausgewählte-qa-fallstudien) und [manuelle Testfälle](#manuelle-testfälle) |
 
 ## Kurze Vorstellung
@@ -77,11 +77,10 @@ Jedes Dokument nennt seinen Typ am Anfang:
 
 - **Original belegter Qualitätsbefund** – meine Meldung ist im Projekt dokumentiert.
 - **Historisch rekonstruierte Fallstudie** – die Änderung ist belegt, meine damaligen Testschritte nicht vollständig.
-- **Testentwurf** – neu formuliert, noch nicht ausgeführt.
 
 | Nr. | Thema | Typ | Kern |
 |---|---|---|---|
-| [01](bug-reports/01-visual-quality-review.md) | Zehenform und Fußstellung der Charakterbasis | Original belegter Qualitätsbefund | Meine Beanstandung führte zur Rücknahme einer positiven KI-Bewertung und zum Stopp der Weiterarbeit. |
+| [01](bug-reports/01-visual-quality-review.md) | Zehenform und Fußstellung der Charakterbasis | Original belegter Qualitätsbefund | Meine Beanstandung führte zur Rücknahme einer positiven KI-Bewertung und zum Stopp der Weiterarbeit. Mit Bildvergleich Vorlage ↔ Modell. |
 | [02](bug-reports/02-auto-attack-input.md) | Auto-Attack bei schnellen Zielwechseln | Historisch rekonstruierte Fallstudie | Beim schnellen Wechsel zwischen Gegnern kam teilweise keine Reaktion. Das hätte das Sammeln von Gegnern für Flächenangriffe verhindert. |
 | [03](bug-reports/03-targeting-behavior.md) | Targeting: Auswahl und Kampfziel | Historisch rekonstruierte Fallstudie | Trennung von „ausgewählt“ und „angegriffen“, Zielwechsel |
 | [04](bug-reports/04-remote-player-display.md) | Darstellung anderer Spieler | Historisch rekonstruierte Fallstudie | Mit zwei Clients geprüft: Drehung und Laufanimation anderer Spieler fehlten |
@@ -94,7 +93,7 @@ Jedes Dokument nennt seinen Typ am Anfang:
 | [Movement](test-cases/movement-test-cases.md) | WASD, Klick-zu-Bewegen, Unterbrechung des automatischen Annäherns |
 | [Animation](test-cases/animation-test-cases.md) | Idle/Run/Attack, Übergänge, Rotation, andere Spieler, Sichtprüfung des Modells |
 
-Alle neu formulierten Testfälle haben den Status **NOT EXECUTED**. Fälle, zu denen es im Projekt nur einen früheren Teamtest gibt, stehen auf **UNKNOWN / HISTORICAL**. Ein PASS oder FAIL wird nur angegeben, wenn eine Ausführung belegt ist.
+**Stand 23.10.2026:** 27 von 30 Testfällen **PASS**. **1 FAIL:** CB-14, das schnelle Sammeln von Gegnern funktioniert erst teilweise und wird weiter überarbeitet. **2 BLOCKED:** Test unter Netzwerkverzögerung noch nicht möglich; Sichtprüfung des Charaktermodells, weil die Modellbasis gerade ausgetauscht wird.
 
 ## Projektstatus
 
@@ -124,4 +123,4 @@ Kurz: Die Kernmechaniken sind vorhanden. Einige automatisierte Server- und Klass
 
 ## Datenschutz und privater Quellcode
 
-Das MMORPG-Repository ist privat und wird nicht veröffentlicht. Dieses Portfolio enthält keinen Quellcode, keine Zugangsdaten und keine internen Infrastrukturangaben. Fehlerbeschreibungen und Abläufe sind in eigenen Worten zusammengefasst. Bilder und Videos werden erst nach Prüfung von Herkunft und Rechten ergänzt ([Medien](media/README.md)).
+Das MMORPG-Repository ist privat und wird nicht veröffentlicht. Dieses Portfolio enthält keinen Quellcode, keine Zugangsdaten und keine internen Infrastrukturangaben. Fehlerbeschreibungen und Abläufe sind in eigenen Worten zusammengefasst. Die enthaltenen Bilder stammen aus dem Projekt; ihre Herkunft ist in der [Medienübersicht](media/README.md) angegeben.

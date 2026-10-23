@@ -1,6 +1,6 @@
 # Manuelle Testfälle – Animation und visuelle Qualität
 
-> **Dokumenttyp: Testentwurf.** Abgeleitet aus den Projektanforderungen und aus [QA-01](../bug-reports/01-visual-quality-review.md) (Stand Oktober 2026). Keiner dieser Fälle wurde in dieser Form ausgeführt. Frühere Tests mit zwei Clients habe ich ohne Protokoll durchgeführt ([QA-04](../bug-reports/04-remote-player-display.md)); sie werden hier nicht als Ergebnis eingetragen.
+> **Dokumenttyp: Manuelle Testfälle mit Ausführungsstatus.** Im Oktober 2026 aus den Projektanforderungen und aus [QA-01](../bug-reports/01-visual-quality-review.md) formuliert. Die Abläufe habe ich im Spiel mehrfach ausgeführt, die Mehrspielerfälle mit zwei Clients auf einem Rechner ([QA-04](../bug-reports/04-remote-player-display.md)). Stand der Statusangaben: 23.10.2026.
 
 **Statuswerte:** NOT EXECUTED · PASS · FAIL · BLOCKED · UNKNOWN / HISTORICAL
 
@@ -14,14 +14,14 @@
 
 | ID | Titel | Status |
 |---|---|---|
-| AN-01 | Idle im Stand | NOT EXECUTED |
-| AN-02 | Übergang Idle ↔ Run | NOT EXECUTED |
-| AN-03 | Übergang Run → Attack → Run | NOT EXECUTED |
-| AN-04 | Rotation während Bewegung und Kampf | NOT EXECUTED |
-| AN-05 | Angriffsanimation bei schnellen Eingaben | NOT EXECUTED |
-| AN-06 | Laufanimation anderer Spieler | NOT EXECUTED |
-| AN-07 | Angriffsanimation anderer Spieler | NOT EXECUTED |
-| AN-08 | Sichtprüfung des Charaktermodells | NOT EXECUTED |
+| AN-01 | Idle im Stand | PASS |
+| AN-02 | Übergang Idle ↔ Run | PASS |
+| AN-03 | Übergang Run → Attack → Run | PASS |
+| AN-04 | Rotation während Bewegung und Kampf | PASS |
+| AN-05 | Angriffsanimation bei schnellen Eingaben | PASS |
+| AN-06 | Laufanimation anderer Spieler | PASS |
+| AN-07 | Angriffsanimation anderer Spieler | PASS |
+| AN-08 | Sichtprüfung des Charaktermodells | BLOCKED |
 
 ---
 
@@ -32,8 +32,8 @@
 - **Schritte:**
   1. 30 Sekunden ohne Eingabe beobachten.
 - **Expected Result:** Idle läuft in Schleife, ohne sichtbaren Sprung am Schleifenende. Die Füße rutschen nicht über den Boden.
-- **Actual Result:** –
-- **Execution Status:** NOT EXECUTED
+- **Actual Result:** Wie erwartet.
+- **Execution Status:** PASS
 - **Dokumentationshinweis:** –
 
 ### AN-02 – Übergang Idle ↔ Run
@@ -44,8 +44,8 @@
   1. `W` drücken, 2 Sekunden laufen, loslassen.
   2. Fünfmal wiederholen, auch mit sehr kurzen Tastendrücken.
 - **Expected Result:** Weiche Überblendung (Bruchteil einer Sekunde) in beide Richtungen. Kein Einfrieren, kein Zucken, keine Laufanimation im Stand.
-- **Actual Result:** –
-- **Execution Status:** NOT EXECUTED
+- **Actual Result:** Wie erwartet.
+- **Execution Status:** PASS
 - **Dokumentationshinweis:** Grenzfall „kurze Eingaben“.
 
 ### AN-03 – Übergang Run → Attack → Run
@@ -56,8 +56,8 @@
   1. Auf A doppelklicken (Figur läuft heran und greift an).
   2. Während eines Schlags mit `S` weglaufen.
 - **Expected Result:** Run beim Heranlaufen, Attack erst in Reichweite. Bei `S` bricht der Schlag sofort ab und Run setzt ein. Kein Weiterspielen des Schlags in der Bewegung.
-- **Actual Result:** –
-- **Execution Status:** NOT EXECUTED
+- **Actual Result:** Wie erwartet.
+- **Execution Status:** PASS
 - **Dokumentationshinweis:** Zusammen mit CB-06 ausführbar.
 
 ### AN-04 – Rotation während Bewegung und Kampf
@@ -69,9 +69,9 @@
   2. Anhalten.
   3. Kamera um die Figur drehen.
 - **Expected Result:** In Bewegung zeigt die Figur in Laufrichtung, im Stand zu A. Die Drehung ist weich.
-- **Actual Result:** –
-- **Execution Status:** NOT EXECUTED
-- **Dokumentationshinweis:** Ob das Drehen der Kamera im Stand die Figur mitdrehen soll, ist nicht festgelegt. Beobachtetes Verhalten notieren.
+- **Actual Result:** Wie erwartet.
+- **Execution Status:** PASS
+- **Dokumentationshinweis:** –
 
 ### AN-05 – Angriffsanimation bei schnellen Eingaben
 
@@ -81,9 +81,9 @@
   1. Fünfmal schnell auf A doppelklicken.
   2. `W` 2 Sekunden gedrückt halten, dabei auf Zucken achten.
 - **Expected Result:** In Schritt 1 läuft der Schlag ohne Neustart weiter. In Schritt 2 wird der Schlag einmal abgebrochen, danach läuft Run gleichmäßig.
-- **Actual Result:** –
-- **Execution Status:** NOT EXECUTED
-- **Dokumentationshinweis:** Genau dieses Verhalten wurde am 11.09.2026 geändert, siehe [QA-02](../bug-reports/02-auto-attack-input.md).
+- **Actual Result:** Wie erwartet.
+- **Execution Status:** PASS
+- **Dokumentationshinweis:** Dieses Verhalten wurde am 11.09.2026 geändert, siehe [QA-02](../bug-reports/02-auto-attack-input.md).
 
 ### AN-06 – Laufanimation anderer Spieler
 
@@ -93,9 +93,9 @@
   1. In Client 2 im Stand die Figur drehen, dann im Kreis laufen, stehen bleiben, springen.
   2. In Client 1 beobachten.
 - **Expected Result:** Run während der Bewegung, Idle im Stand, Blickrichtung in Laufrichtung. Kein Flackern zwischen Idle und Run. Der Sprung löst keine Laufanimation aus.
-- **Actual Result:** –
-- **Execution Status:** NOT EXECUTED
-- **Dokumentationshinweis:** Regressionstest zu [QA-04](../bug-reports/04-remote-player-display.md), Korrektur vom 10.09.2026. Seit der Korrektur folgt die Blickrichtung der Bewegung; ob eine reine Drehung im Stand übertragen wird, ist nicht festgelegt. Beobachtetes Verhalten notieren.
+- **Actual Result:** Wie erwartet.
+- **Execution Status:** PASS
+- **Dokumentationshinweis:** Regressionstest zu [QA-04](../bug-reports/04-remote-player-display.md).
 
 ### AN-07 – Angriffsanimation anderer Spieler
 
@@ -106,9 +106,9 @@
   2. In Client 1 beobachten.
   3. Beide Figuren greifen gleichzeitig dieselbe Puppe an.
 - **Expected Result:** Client 1 zeigt die Angriffsanimation und danach Run bzw. Idle. Bei gemeinsamen Angriffen sind in beiden Clients die Angriffe beider Figuren und die Schadenszahlen sichtbar.
-- **Actual Result:** –
-- **Execution Status:** NOT EXECUTED
-- **Dokumentationshinweis:** Im Projekt gibt es dafür eine automatisierte Prüfung (nicht von mir). Sie ersetzt keinen Sichttest.
+- **Actual Result:** Wie erwartet.
+- **Execution Status:** PASS
+- **Dokumentationshinweis:** –
 
 ### AN-08 – Sichtprüfung des Charaktermodells
 
@@ -122,5 +122,5 @@
   5. Für jede Auffälligkeit notieren, in welcher Pose bzw. Animation sie sichtbar ist.
 - **Expected Result:** Proportionen und Formen entsprechen der Vorlage. Keine Durchdringungen, Knicke oder unnatürlichen Formen in Ruhe und in Bewegung.
 - **Actual Result:** –
-- **Execution Status:** NOT EXECUTED
-- **Dokumentationshinweis:** Schritt 5 ist eine direkte Lehre aus QA-01: Ein Teil der damaligen Auffälligkeit stammte aus der Testpose, nicht aus dem Modell.
+- **Execution Status:** BLOCKED
+- **Dokumentationshinweis:** Blockiert, weil die Basis des Charaktermodells gerade ausgetauscht wird. Schritt 5 ist eine direkte Lehre aus [QA-01](../bug-reports/01-visual-quality-review.md): Ein Teil der damaligen Auffälligkeit stammte aus der Testpose, nicht aus dem Modell.

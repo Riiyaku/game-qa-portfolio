@@ -21,6 +21,16 @@ Gesucht war eine glatte, gesichtslose männliche Grundfigur im Stil der festgele
 
 Abnahmekriterium im Arbeitsauftrag: *Die zwei rechten Zehen passen in Vorder-, Ober- und Seitenansicht zur Vorlage und zur linken Seite.*
 
+**Die Vorlage (Ziel):**
+
+![Stilvorlage: Vorder-, Seiten- und Rückansicht einer glatten, gesichtslosen Grundfigur](../media/qa-01/01-vorlage-turnaround.png)
+
+*KI-generiertes Konzeptbild vom 13.10.2026, als Form- und Stilvorlage für die Modellierung. Kein Spielscreenshot und kein 3D-Modell.*
+
+![Ausschnitt der Vorlage: Füße in der Vorderansicht](../media/qa-01/02-vorlage-fuesse.png)
+
+*Ausschnitt der Vorlage: Die Zehen sind kurz, an den Kuppen gewölbt und gehen weich in den Vorfuß über.*
+
 ## 2. Prüfung vor meiner Beanstandung
 
 Die KI-Agenten hatten den Kandidaten umfangreich geprüft:
@@ -50,6 +60,12 @@ Großzehe und zweite Zehe mit gewölbten Kuppen und weichem Übergang zum Vorfu�
 
 Ich habe dazu eine schräge Nahaufnahme und eine Gesamtansicht der Füße als eigene Bildschirmaufnahmen vorgelegt.
 
+**Der beanstandete Stand:**
+
+![Beanstandeter Modellstand in Blender: eingedrehte Füße, stumpfe Zehen](../media/qa-01/03-testpose-blender.png)
+
+*Prüfansicht in Blender vom 15.10.2026, derselbe Modellstand in der Testpose. Die ersten beiden Zehen wirken wie stumpfe Zylinder, die Füße sind nach innen gedreht. Das Bild stammt aus der Projektdokumentation; es ist nicht meine eigene Aufnahme.*
+
 ## 6. Reaktion des Prüfsystems
 
 - Der KI-Prüfer betrachtete beide Bilder erneut und **zog sein vorheriges „KEEP“ zurück**. Neues Urteil: **NO-GO** für die Übertragung auf die weiteren Zehen und für eine Formabnahme.
@@ -66,6 +82,12 @@ Eine anschließende Untersuchung verglich Ruhe- und Testpose mit identischer Kam
 | Stumpfe Zehenform | **Bestätigt.** Der Formfehler bestand bereits in der Ruhepose, war also kein Problem der Animation oder Gewichtung. |
 | Eingedrehte Füße | **Durch die Testpose erklärt.** In der geöffneten Szene waren die Oberschenkel für eine Belastungsprobe gegensinnig gedreht. Ein Fehler in den Zehen- oder Fußknochen wurde dafür nicht gefunden. |
 
+| Ruhepose | Testpose |
+|---|---|
+| ![Füße in Ruhepose, schräg von oben](../media/qa-01/04-ruhepose-schraeg.png) | ![Füße in Testpose, gleiche Kamera](../media/qa-01/05-testpose-schraeg.png) |
+
+*Gleiche Kamera, gleiches Licht, derselbe Modellstand (15.10.2026). Die stumpfe Zehenform ist schon in der Ruhepose sichtbar. Die Eindrehung entsteht erst in der Testpose. Für den Vergleich wurden nur die Füße dargestellt; die Schnittkante am Knöchel ist kein Loch im Modell.*
+
 Für mich war das eine wichtige Lehre: Eine Auffälligkeit kann aus dem Prüfaufbau stammen. Deshalb gehört zur Meldung, in welcher Pose und Szene etwas beobachtet wurde.
 
 ## 8. Weiterer Verlauf
@@ -74,12 +96,14 @@ Für mich war das eine wichtige Lehre: Eine Auffälligkeit kann aus dem Prüfauf
 |---|---|---|
 | 15.10.2026 | Nach einem weiteren Bild von mir bestätigt: Zehen wirken auch in Ruhe kurz und dick. Ich gab einen neuen Ansatz frei (zusammenhängender Vorfuß statt einzeln aufgesetzter Zehen). | Erster Grobtest verworfen; Auftrag am 18.10. auf blockiert gesetzt |
 | 18.–19.10.2026 | Neue Gesamtüberarbeitung der Figur, unter anderem am Fuß | Endkandidat liegt zur **menschlichen Sichtabnahme** vor; diese ist offen |
+| Stand 23.10.2026 | Die Basis des Charaktermodells wird ausgetauscht | Sichtprüfung [AN-08](../test-cases/animation-test-cases.md) ist **BLOCKED**, bis der Austausch abgeschlossen ist |
 
 ## 9. Grenzen der Nachweisbarkeit
 
 - Eine **zurückgenommene Freigabe ist keine erfolgreiche Korrektur.** Dass die Zehenform inzwischen der Vorlage entspricht, ist nicht belegt.
 - Die Analyse, Messungen und Modellarbeit stammen von KI-Agenten, nicht von mir. Mein Anteil sind die Sichtprüfung, die Beanstandung, die Bilder und die Freigabeentscheidung für den nächsten Schritt.
-- Bilder werden hier nicht gezeigt, weil Herkunft und Rechte der Vorlage nicht abschließend geklärt sind.
+- Die gezeigten Modellbilder stammen aus der Projektdokumentation desselben Modellstands, nicht aus meinen eigenen Bildschirmaufnahmen.
+- Ein Bild eines korrigierten Stands fehlt bewusst: Eine abgenommene Korrektur gibt es noch nicht.
 
 ## Was dieser Fall zeigt
 

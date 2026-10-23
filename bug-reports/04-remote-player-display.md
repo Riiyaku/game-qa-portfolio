@@ -13,7 +13,7 @@
 | Schweregrad (eigene Einschätzung) | Hoch für ein MMORPG: Andere Spieler sind ständig sichtbar |
 | Häufigkeit | Vor der Korrektur nach meiner Erinnerung immer |
 | Persönliche Beteiligung | Testaufbau mit zwei Clients, Beobachtung, Beschreibung, Korrektur per KI veranlasst, erneut geprüft |
-| Aktueller Status | Korrektur umgesetzt. Kein protokollierter Nachtest |
+| Aktueller Status | Korrektur umgesetzt. Stand 23.10.2026: AN-06, AN-07, CB-13 und MV-07 PASS |
 
 ## Testaufbau
 

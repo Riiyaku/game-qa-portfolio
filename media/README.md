@@ -1,12 +1,18 @@
 # Medien
 
-Dieses Verzeichnis enthält derzeit **keine Bilder oder Videos**.
+## Enthaltene Bilder
 
-## Warum
+| Datei | Inhalt | Herkunft |
+|---|---|---|
+| [qa-01/01-vorlage-turnaround.png](qa-01/01-vorlage-turnaround.png) | Stilvorlage der Grundfigur (vorne, seitlich, hinten) | KI-generiertes Konzeptbild aus dem Projekt, 13.10.2026; kein Spielscreenshot |
+| [qa-01/02-vorlage-fuesse.png](qa-01/02-vorlage-fuesse.png) | Ausschnitt: Füße der Vorlage | wie oben |
+| [qa-01/03-testpose-blender.png](qa-01/03-testpose-blender.png) | Beanstandeter Modellstand in Blender, Testpose | Prüfaufnahme aus dem Projekt, 15.10.2026; Modell auf Basis einer CC0-Vorlage |
+| [qa-01/04-ruhepose-schraeg.png](qa-01/04-ruhepose-schraeg.png) | Füße in Ruhepose | Diagnoseaufnahme aus dem Projekt, 15.10.2026 |
+| [qa-01/05-testpose-schraeg.png](qa-01/05-testpose-schraeg.png) | Füße in Testpose, gleiche Kamera | wie oben |
 
-Das Projekt nutzt Platzhalterfiguren und -animationen von Drittanbietern sowie Stilvorlagen, deren Herkunft und Weitergaberechte vor einer Veröffentlichung einzeln geprüft werden müssen. Bis dahin werden keine Medien übernommen. Es werden keine KI-generierten Bilder als Spielszenen ausgegeben.
+Die Bilder sind zugeschnitten und verkleinert, inhaltlich aber nicht verändert. Sie gehören zur Fallstudie [QA-01](../bug-reports/01-visual-quality-review.md).
 
-## Geplante Aufnahmen
+## Geplante Aufnahmen aus dem Spiel
 
 Die Aufnahmen sollen direkt aus dem laufenden Prototyp stammen und ausschließlich eigene oder frei verwendbare Inhalte zeigen.
 

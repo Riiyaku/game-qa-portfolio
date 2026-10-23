@@ -12,7 +12,7 @@
 | Getestete Version | Nicht protokolliert. Die Änderungen sind auf den 28.08., 11.09. und 12.09.2026 datiert. |
 | Schweregrad / Häufigkeit | Nicht bewertet bzw. nicht bekannt – keine Originalmeldung vorhanden |
 | Persönliche Beteiligung | Laut Eigenangabe: Targeting im Spiel getestet, Anpassungen per KI veranlasst |
-| Aktueller Status | Mechanik umgesetzt. Letzter dokumentierter manueller Test: 07.09.2026 (Projektpartner), also vor späteren Änderungen. |
+| Aktueller Status | Mechanik umgesetzt. Stand 23.10.2026: CB-01, CB-02, CB-04, CB-09, CB-10, CB-13 PASS. |
 
 ## Das Problem: „ausgewählt“ ist nicht „angegriffen“
 
@@ -52,10 +52,10 @@ Als ausführbare Testfälle: CB-01, CB-02, CB-04, CB-09, CB-10 in [combat-test-c
 |---|---|---|---|
 | 07.09.2026 | Projektpartner | Manuelle Prüfung von Auswahl/Engagement, Ringen und Escape als bestanden dokumentiert | Vor den Änderungen vom 11. und 12.09.; nicht als aktueller Status verwendbar |
 | 11.09.2026 | nicht zuordenbar | Automatisierte Testläufe der Klassen laut Anforderungsdokument weiterhin bestanden, nach der Umstellung der Markierungen | Prüft Abläufe automatisch, nicht das Aussehen; das Aussehen ist als offen vermerkt |
-| nach 12.09.2026 | – | Kein dokumentierter manueller Test | – |
+| Stand 23.10.2026 | ich | Testfälle CB-01, CB-02, CB-04, CB-09, CB-10, CB-13 | PASS |
 
 ## Grenzen der Nachweisbarkeit
 
 - Die Erweiterungen vom 11. und 12.09.2026 (Bodenringe als Projektion, Dreieck über dem Ziel, Escape-Reihenfolge, nicht angreifbare Spieler) hat nach meiner Angabe überwiegend mein Projektpartner veranlasst. Er hat die Varianten mit einem KI-Werkzeug abgewogen und direkt umsetzen lassen. Die Grundfunktionen, etwa die Ringe, gab es vorher schon. In den Anforderungen steht dazu nur „auf Wunsch des Nutzers“.
 - Die Implementierung erfolgte durch KI.
-- Kein aktueller Teststatus; alle Testfälle dazu stehen auf NOT EXECUTED oder UNKNOWN / HISTORICAL.
+- Ob die Grenzfälle oben schon im August/September genau so getestet wurden, ist nicht belegt; ihr aktueller Status steht in den Testfällen.
