@@ -1,0 +1,14 @@
+# Interne Prüf- und Quelldokumente – niemals veröffentlichen
+INTERNAL_REVIEW.md
+codex-audit.md
+
+# Lokale Notizen und Entwürfe
+*.local.md
+drafts/
+
+# System- und Editordateien
+.DS_Store
+Thumbs.db
+desktop.ini
+.obsidian/
+.vscode/
